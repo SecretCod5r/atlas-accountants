@@ -593,3 +593,21 @@
     initScrollReveal: initScrollReveal,
   };
 })();
+
+// Mobile menu toggle
+window.toggleMobileMenu = function() {
+  var nav = document.querySelector('.nav-links');
+  var overlay = document.querySelector('.mobile-overlay');
+  if (!nav || !overlay) return;
+  
+  var isMenuOpen = nav.classList.contains('active');
+  if (isMenuOpen) {
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  } else {
+    nav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
