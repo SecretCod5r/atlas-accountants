@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Margin Line Scorecard | Atlas Accountants</title>
+<meta name="description" content="How healthy are your job numbers? 9 questions, 90 seconds, instant score. No email required to start.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .ml-container { max-width: 680px; margin: 60px auto 100px; padding: 0 20px; }
+  .ml-header { text-align: center; margin-bottom: 40px; }
+  .ml-header h1 { font-size: 38px; margin-bottom: 12px; }
+  .ml-header p { font-size: 16px; color: var(--charcoal); opacity: 0.8; }
+  .ml-card {
+    background: #fff; border-radius: 12px; border: 1px solid rgba(22,35,59,0.10);
+    box-shadow: 0 26px 50px -18px rgba(22,35,59,0.30); padding: 40px;
+    min-height: 520px; display: flex; flex-direction: column; position: relative;
+  }
+
+  /* Winding progress path */
+  .ml-progress-wrap { position: relative; height: 36px; margin-bottom: 20px; }
+  .ml-progress-svg { width: 100%; height: 36px; overflow: visible; display: block; }
+  #ml-progress-bg { fill: none; stroke: rgba(22,35,59,0.06); stroke-width: 3; stroke-linecap: round; }
+  #ml-progress-fg { fill: none; stroke: var(--orange); stroke-width: 3; stroke-linecap: round; }
+  #ml-progress-dot { fill: var(--orange); filter: drop-shadow(0 2px 4px rgba(224,104,14,0.4)); }
+
+  /* Step transitions */
+  #steps-container { position: relative; flex-grow: 1; display: grid; }
+  .ml-step {
+    grid-area: 1 / 1;
+    opacity: 0; pointer-events: none; transform: translateX(40px);
+    display: flex; flex-direction: column; height: 100%;
+  }
+  .ml-step.active { opacity: 1; pointer-events: auto; transform: translateX(0); z-index: 2; }
+
+  .step-label { font-size: 12px; font-weight: 700; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+  .question-text { font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; color: var(--navy); line-height: 1.3; margin-bottom: 30px; }
+  .options-grid { display: flex; flex-direction: column; gap: 12px; }
+  .opt-btn {
+    display: flex; align-items: center; gap: 14px; padding: 16px 20px;
+    border-radius: 8px; border: 1px solid rgba(22,35,59,0.15);
+    background: transparent; font-family: 'Sen', sans-serif; font-size: 15px;
+    color: var(--charcoal); text-align: left; cursor: pointer; transition: all 0.2s ease;
+  }
+  .opt-btn:hover { border-color: rgba(224,104,14,0.5); background: rgba(224,104,14,0.02); }
+  .opt-btn.selected { border-color: var(--orange); background: rgba(224,104,14,0.06); }
+  .opt-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid rgba(22,35,59,0.3); flex-shrink: 0; position: relative; }
+  .opt-btn.selected .opt-dot { border-color: var(--orange); background: var(--orange); }
+  .opt-btn.selected .opt-dot::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; border-radius: 50%; background: #fff; }
+
+  .nav-btns { display: flex; justify-content: space-between; margin-top: auto; padding-top: 30px; }
+  .btn-back { background: transparent; border: none; color: var(--slate); font-family: 'Sen', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .btn-back:hover { color: var(--navy); }
+
+  /* Score circle */
+  .score-reveal { text-align: center; margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; }
+  .score-circle-wrapper { position: relative; width: 140px; height: 140px; margin: 0 auto 20px; }
+  .score-circle-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+  .score-circle-bg { fill: none; stroke: rgba(22,35,59,0.05); stroke-width: 6; }
+  .score-circle-progress { fill: none; stroke: var(--orange); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 377; stroke-dashoffset: 377; }
+  .score-value {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 42px; font-weight: 600; color: var(--navy);
+  }
+  .score-headline { font-family: 'Fraunces', serif; font-size: 26px; color: var(--navy); margin-bottom: 12px; opacity: 0; }
+
+  .gate-form { background: rgba(22,35,59,0.03); border-radius: 8px; padding: 24px; text-align: left; }
+  .gate-form p { font-size: 14px; margin-bottom: 20px; font-weight: 500; }
+  .floating-label-group { position: relative; margin-bottom: 16px; }
+  .floating-label-group input, .floating-label-group select {
+    width: 100%; padding: 22px 14px 10px; border: 1px solid rgba(22,35,59,0.15); border-radius: 6px;
+    font-family: 'Sen', sans-serif; font-size: 15px; color: var(--charcoal); background: #FAFAFA;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .floating-label-group select { padding-top: 18px; }
+  .floating-label-group input:focus, .floating-label-group select:focus { outline: none; border-color: var(--orange); background: #fff; box-shadow: 0 0 0 4px rgba(224,104,14,0.1); }
+  .floating-label-group label { position: absolute; top: 18px; left: 14px; font-size: 14px; color: var(--charcoal); opacity: 0.6; pointer-events: none; transition: all 0.2s ease; }
+  .floating-label-group input:focus ~ label, .floating-label-group input:not(:placeholder-shown) ~ label,
+  .floating-label-group select:focus ~ label, .floating-label-group select:valid ~ label { top: 6px; font-size: 11px; font-weight: 700; color: var(--orange); opacity: 1; }
+  .btn-submit { width: 100%; margin-top: 10px; }
+
+  /* Report */
+  .report-header { text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(22,35,59,0.1); }
+  .category-breakdown { margin-bottom: 40px; }
+  .category-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid rgba(22,35,59,0.08); }
+  .cat-info { flex: 1; padding-right: 20px; }
+  .cat-name { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .cat-desc { font-size: 14px; color: var(--charcoal); line-height: 1.5; opacity: 0.85; margin-bottom: 14px; }
+  .mini-spark { width: 80px; height: 16px; overflow: visible; }
+  .mini-spark-bg { fill: none; stroke: rgba(22,35,59,0.08); stroke-width: 2; stroke-linecap: round; }
+  .mini-spark-fg { fill: none; stroke: var(--orange); stroke-width: 2; stroke-linecap: round; }
+  .cat-score-badge { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 8px; }
+  .cat-score-badge.low { color: var(--slate); }
+  .cat-score-badge.mid { color: var(--orange); }
+  .cat-score-badge.high { color: var(--navy); }
+
+  @media (max-width: 600px) { .ml-card { padding: 24px; min-height: 480px; } .question-text { font-size: 20px; } .category-row { flex-direction: column; gap: 12px; } }
+</style>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+<div class="wrap"><nav>
+  <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+  <div class="nav-links">
+    <a href="Atlas_Home_Page.html">Home</a><a href="services.html">Services</a>
+    <a href="margin-line.html">The Margin Line</a><a href="pricing.html">Pricing</a><a href="about.html">About</a>
+    <a href="financial-health-review.html" class="nav-cta">Get My Free Review</a>
+  </div>
+</nav></div>
+
+<div class="ml-container">
+  <div class="ml-header" id="ml-main-header">
+    <h1>The Margin Line</h1>
+    <p>A free 90-second scorecard. Answer 9 quick questions and get an instant score for your job numbers.</p>
+  </div>
+  <div class="ml-card">
+    <!-- Winding progress path -->
+    <div class="ml-progress-wrap" id="ml-progress-bar">
+      <svg class="ml-progress-svg" viewBox="0 0 600 36" preserveAspectRatio="none">
+        <path id="ml-progress-bg" d="M10,18 C100,6 150,30 250,18 C350,6 400,30 500,18 C550,6 580,18 590,18"/>
+        <path id="ml-progress-fg" d="M10,18 C100,6 150,30 250,18 C350,6 400,30 500,18 C550,6 580,18 590,18"/>
+        <circle id="ml-progress-dot" cx="10" cy="18" r="5"/>
+      </svg>
+    </div>
+    <div id="steps-container"></div>
+  </div>
+</div>
+
+<footer><div class="wrap"><div class="footer-top"><div class="footer-brand"><a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a><p>Bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors. Wake Forest, NC. Serving all 50 states.</p></div><div class="footer-cols"><div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div><div class="footer-col"><h4>Tools</h4><a href="margin-line.html">The Margin Line</a><a href="financial-health-review.html">Financial Health Review</a></div><div class="footer-col"><h4>Contact</h4><a href="tel:+19194380294">(919) 438-0294</a><a href="mailto:info@atlasaccountantsusa.com">info@atlasaccountantsusa.com</a></div></div></div><div class="footer-bottom"><span>&copy; 2026 Atlas Accountants. All rights reserved.</span><span>Wake Forest, North Carolina</span></div></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="atlas-interactions.js"></script>
+
+<script>
+var branchChoice = null;
+var branchQuestion = {
+  q: "Which best describes your business?",
+  opts: [
+    { text: "Residential GC or remodeler", type: "contractor" },
+    { text: "Specialty trade subcontractor", type: "contractor" },
+    { text: "Real estate investor or landlord", type: "contractor" },
+    { text: "Other small business (not construction or real estate)", type: "general" }
+  ]
+};
+
+var questions = [
+  { cat: 'Profitability Clarity', q: "Do you know if you made or lost money on your last three jobs, and by how much?", opts: [
+    { text: "No idea, I'd have to dig through paperwork", val: 0 },
+    { text: "Rough idea, but not exact", val: 1 },
+    { text: "I know within 30 days of job close", val: 2 },
+    { text: "I know in real time, job by job", val: 3 }
+  ]},
+  { cat: 'Profitability Clarity', q: "How do you currently track retainage and change orders?", opts: [
+    { text: "We don't track it separately", val: 0 },
+    { text: "In a spreadsheet, updated occasionally", val: 1 },
+    { text: "In a spreadsheet, updated weekly", val: 2 },
+    { text: "In our accounting software, tied to each job", val: 3 }
+  ]},
+  { cat: 'Profitability Clarity', q: "Right now, do you know whether you're overbilled or underbilled on your active jobs?", opts: [
+    { text: "No idea", val: 0 },
+    { text: "I could estimate roughly", val: 1 },
+    { text: "I know for my biggest jobs", val: 2 },
+    { text: "I know for every active job", val: 3 }
+  ]},
+  { cat: 'Cash Flow Visibility', q: "When was the last time your books were reconciled?", opts: [
+    { text: "More than 3 months ago, or not sure", val: 0 },
+    { text: "1 to 3 months ago", val: 1 },
+    { text: "Last month", val: 2 },
+    { text: "This week", val: 3 }
+  ]},
+  { cat: 'Cash Flow Visibility', q: "How many months of bookkeeping backlog exist today?", opts: [
+    { text: "6+ months", val: 0 },
+    { text: "3 to 6 months", val: 1 },
+    { text: "1 to 2 months", val: 2 },
+    { text: "Fully caught up", val: 3 }
+  ]},
+  { cat: 'Cash Flow Visibility', q: "If a client payment came in 30 days late, how confident are you in covering payroll and materials without scrambling?", opts: [
+    { text: "Not confident at all", val: 0 },
+    { text: "I'd have to move things around", val: 1 },
+    { text: "I'd be fine for a couple weeks", val: 2 },
+    { text: "Completely confident", val: 3 }
+  ]},
+  { cat: 'Compliance Readiness', q: "How confident are you that your books would hold up if a surety or bank asked for them tomorrow?", opts: [
+    { text: "Not confident", val: 0 },
+    { text: "Somewhat, but they'd need work", val: 1 },
+    { text: "Mostly confident", val: 2 },
+    { text: "Fully confident", val: 3 }
+  ]},
+  { cat: 'Compliance Readiness', q: "How do you currently handle 1099s and subcontractor payment tracking?", opts: [
+    { text: "Not tracked consistently", val: 0 },
+    { text: "Tracked manually, scramble at year-end", val: 1 },
+    { text: "Tracked in software but not reconciled monthly", val: 2 },
+    { text: "Tracked and reconciled monthly", val: 3 }
+  ]},
+  { cat: 'Compliance Readiness', q: "How would you describe your relationship with your CPA today?", opts: [
+    { text: "I don't have one, we scramble every year", val: 0 },
+    { text: "We talk once a year, at tax time", val: 1 },
+    { text: "We check in quarterly", val: 2 },
+    { text: "Books are CPA-ready any time of year", val: 3 }
+  ]}
+];
+
+var logic = {
+  getHeadline: function(score) {
+    if(score <= 30) return "You're flying mostly blind on job costs.";
+    if(score <= 55) return "You've got a feel for your numbers, but you're still guessing more than you'd like.";
+    if(score <= 80) return "You're ahead of most contractors we see, with a few real blind spots left.";
+    return "Your numbers are tighter than most contractors your size. Let's make sure they stay that way.";
+  },
+  getCatCopy: function(cat, pts) {
+    if (cat === 'Profitability Clarity') {
+      if (branchChoice && branchChoice.type === 'general') {
+        if(pts <= 3) return "You don't know which clients or products are actually worth your time, so you can't tell if you're growing the profitable part of the business or the expensive part.";
+        if(pts <= 6) return "You've got a rough read on what's working, but not enough precision to double down on the right clients or products with confidence.";
+        return "You know exactly where your profit comes from, this is the visibility that lets you grow on purpose instead of by accident.";
+      } else {
+        if(pts <= 3) return "You know your numbers after the job is done, not while it's happening. By then, the margin is already whatever it's going to be.";
+        if(pts <= 6) return "You've got a rough sense of job profitability, but not enough to catch a losing job while there's still time to fix it.";
+        return "You know where every job stands in real time. This is exactly the visibility that protects your margin.";
+      }
+    }
+    if (cat === 'Cash Flow Visibility') {
+      if(pts <= 3) return "Your books are behind enough that a single late payment or slow month could catch you off guard.";
+      if(pts <= 6) return "You're reasonably current, but the backlog and reconciliation gaps mean you're often reacting instead of planning.";
+      return "Your books are current enough that cash flow surprises are rare. You see problems coming before they land.";
+    }
+    if (cat === 'Compliance Readiness') {
+      if(pts <= 3) return "If a bank, surety, or auditor asked for your books tomorrow, you'd need real time to get them in shape.";
+      if(pts <= 6) return "You're mostly covered, but there are gaps that would slow you down under real scrutiny.";
+      return "Your books are ready for scrutiny at any time. This is what makes bonding and lending conversations easy instead of stressful.";
+    }
+  },
+  getTierClass: function(pts) { if(pts <= 3) return 'low'; if(pts <= 6) return 'mid'; return 'high'; },
+  getTierLabel: function(pts) { if(pts <= 3) return 'Needs Work'; if(pts <= 6) return 'Average'; return 'Strong'; },
+  getSparkPath: function(pts) { if(pts <= 3) return "M0,14 L20,12 L40,15 L60,10 L80,14"; if(pts <= 6) return "M0,14 L20,8 L40,10 L60,5 L80,6"; return "M0,14 L20,8 L40,4 L60,6 L80,0"; }
+};
+
+var currentStep = -1;
+var answers = new Array(questions.length).fill(null);
+var container = document.getElementById('steps-container');
+var prefersReduced = window.AtlasInteractions && window.AtlasInteractions.prefersReduced;
+
+// Winding progress path setup
+var progressFg = document.getElementById('ml-progress-fg');
+var progressDot = document.getElementById('ml-progress-dot');
+var progressLen = 0;
+try { progressLen = progressFg.getTotalLength(); } catch(e) { progressLen = 600; }
+progressFg.style.strokeDasharray = progressLen;
+progressFg.style.strokeDashoffset = progressLen;
+
+function setProgress(stepIdx) {
+  var pct = stepIdx < 0 ? 0 : stepIdx / (questions.length + 1);
+  var drawn = pct * progressLen;
+
+  if (typeof gsap !== 'undefined' && !prefersReduced) {
+    gsap.to(progressFg, { strokeDashoffset: progressLen - drawn, duration: 0.5, ease: 'power2.out' });
+    // Move dot along the path
+    try {
+      var pt = progressFg.getPointAtLength(drawn);
+      gsap.to(progressDot, { attr: { cx: pt.x, cy: pt.y }, duration: 0.5, ease: 'power2.out' });
+    } catch(e) {}
+  } else {
+    progressFg.style.strokeDashoffset = progressLen - drawn;
+    try {
+      var pt2 = progressFg.getPointAtLength(drawn);
+      progressDot.setAttribute('cx', pt2.x);
+      progressDot.setAttribute('cy', pt2.y);
+    } catch(e) {}
+  }
+}
+
+function renderStep(idx, direction) {
+  direction = direction || 'next';
+  var oldActive = container.querySelector('.ml-step.active');
+
+  if (oldActive) {
+    if (typeof gsap !== 'undefined' && !prefersReduced) {
+      var exitX = direction === 'next' ? -40 : 40;
+      gsap.to(oldActive, {
+        x: exitX, opacity: 0, duration: 0.35, ease: 'power2.inOut',
+        onComplete: function() { if (oldActive.parentNode) oldActive.remove(); }
+      });
+    } else {
+      oldActive.remove();
+    }
+  }
+
+  var stepDiv = document.createElement('div');
+  stepDiv.className = 'ml-step';
+
+  if (idx === -1) {
+    var html = '<div class="step-label">Getting Started</div>';
+    html += '<div class="question-text">' + branchQuestion.q + '</div><div class="options-grid">';
+    branchQuestion.opts.forEach(function(opt) {
+      var isSel = (branchChoice && branchChoice.text === opt.text) ? 'selected' : '';
+      html += '<button class="opt-btn ' + isSel + '" onclick="selectBranch(\'' + opt.type + '\', \'' + opt.text.replace(/'/g, "\\'") + '\', this)"><div class="opt-dot"></div><span>' + opt.text + '</span></button>';
+    });
+    html += '</div><div class="nav-btns">';
+    html += '<div></div>';
+    if (branchChoice !== null) { html += '<button class="btn-primary" style="padding:10px 20px;font-size:14px;" onclick="goNext()">Next</button>'; }
+    html += '</div>';
+    stepDiv.innerHTML = html;
+
+  } else if (idx >= 0 && idx < questions.length) {
+    var q = questions[idx];
+    var html = '<div class="step-label">Question ' + (idx+1) + ' of ' + questions.length + ' &middot; ' + q.cat + '</div>';
+    html += '<div class="question-text">' + q.q + '</div><div class="options-grid">';
+    q.opts.forEach(function(opt) {
+      var isSel = answers[idx] === opt.val ? 'selected' : '';
+      html += '<button class="opt-btn ' + isSel + '" onclick="selectAnswer(' + opt.val + ', this)"><div class="opt-dot"></div><span>' + opt.text + '</span></button>';
+    });
+    html += '</div><div class="nav-btns">';
+    if (idx > 0) { html += '<button class="btn-back" onclick="goBack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>'; }
+    else { html += '<button class="btn-back" onclick="goBack()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>'; }
+    if (answers[idx] !== null) { html += '<button class="btn-primary" style="padding:10px 20px;font-size:14px;" onclick="goNext()">Next</button>'; }
+    html += '</div>';
+    stepDiv.innerHTML = html;
+
+  } else if (idx === questions.length) {
+    var totalPts = answers.reduce(function(a,b){return a+b;},0);
+    var score100 = Math.round((totalPts/27)*100);
+    var headline = logic.getHeadline(score100);
+    document.getElementById('ml-main-header').style.display = 'none';
+
+    var mappedBizType = "";
+    if (branchChoice && branchChoice.text === "Residential GC or remodeler") mappedBizType = "Residential GC/remodeler";
+    else if (branchChoice && branchChoice.text === "Specialty trade subcontractor") mappedBizType = "Specialty trade subcontractor";
+    else if (branchChoice && branchChoice.text === "Real estate investor or landlord") mappedBizType = "Real estate investor or developer";
+    else if (branchChoice && branchChoice.text === "Other small business (not construction or real estate)") mappedBizType = "Other";
+
+    var s1 = (mappedBizType === "Residential GC/remodeler") ? "selected" : "";
+    var s2 = (mappedBizType === "Specialty trade subcontractor") ? "selected" : "";
+    var s3 = (mappedBizType === "Real estate investor or developer") ? "selected" : "";
+    var s4 = (mappedBizType === "Other") ? "selected" : "";
+
+    stepDiv.innerHTML = '<div class="score-reveal">' +
+      '<div class="score-circle-wrapper"><svg class="score-circle-svg" viewBox="0 0 140 140"><circle class="score-circle-bg" cx="70" cy="70" r="60"></circle><circle class="score-circle-progress" cx="70" cy="70" r="60" id="anim-ring"></circle></svg>' +
+      '<div class="score-value" id="score-number">0</div></div>' +
+      '<div class="score-headline" id="score-headline">"' + headline + '"</div></div>' +
+      '<div class="gate-form"><p>Enter your details to see your full breakdown, category by category.</p>' +
+      '<div class="floating-label-group"><input type="text" id="gf-name" placeholder=" " required><label>First Name</label></div>' +
+      '<div class="floating-label-group"><input type="email" id="gf-email" placeholder=" " required><label>Email</label></div>' +
+      '<div class="floating-label-group"><select id="gf-type" required><option value="" disabled hidden '+(mappedBizType===''?'selected':'')+'></option><option value="Residential GC/remodeler" '+s1+'>Residential GC/remodeler</option><option value="Specialty trade subcontractor" '+s2+'>Specialty trade subcontractor</option><option value="Real estate investor or developer" '+s3+'>Real estate investor or developer</option><option value="Other" '+s4+'>Other</option></select><label>Business Type</label></div>' +
+      '<div class="floating-label-group"><select id="gf-rev" required><option value="" disabled selected hidden></option><option value="Under $500K">Under $500K</option><option value="$500K to $1M">$500K to $1M</option><option value="$1M+">$1M+</option></select><label>Annual Revenue</label></div>' +
+      '<button class="btn-primary btn-submit" onclick="showReport()">Show My Full Breakdown</button></div>';
+
+  } else {
+    document.getElementById('ml-progress-bar').style.display = 'none';
+    var totalPts2 = answers.reduce(function(a,b){return a+b;},0);
+    var score = Math.round((totalPts2/27)*100);
+    var catScores = {
+      'Profitability Clarity': answers[0]+answers[1]+answers[2],
+      'Cash Flow Visibility': answers[3]+answers[4]+answers[5],
+      'Compliance Readiness': answers[6]+answers[7]+answers[8]
+    };
+    var rhtml = '<div class="report-header"><div class="score-circle-wrapper" style="width:100px;height:100px;margin-bottom:16px;"><svg class="score-circle-svg" viewBox="0 0 140 140"><circle class="score-circle-bg" cx="70" cy="70" r="60"></circle><circle class="score-circle-progress" cx="70" cy="70" r="60" style="stroke-dashoffset:'+(377-(377*(score/100)))+'"></circle></svg><div class="score-value" style="font-size:30px;">'+score+'</div></div><h2 style="font-family:\'Fraunces\',serif;font-weight:500;font-size:28px;color:var(--navy);">Your Margin Line Report</h2></div><div class="category-breakdown">';
+    ['Profitability Clarity','Cash Flow Visibility','Compliance Readiness'].forEach(function(cat,ci) {
+      var pts = catScores[cat]; var tc = logic.getTierClass(pts); var tl = logic.getTierLabel(pts);
+      var desc = logic.getCatCopy(cat,pts); var sp = logic.getSparkPath(pts);
+      rhtml += '<div class="category-row"><div class="cat-info"><div class="cat-name">'+cat+'</div><div class="cat-desc">'+desc+'</div><div class="cat-score-badge '+tc+'"><svg class="mini-spark" viewBox="0 0 80 16"><path class="mini-spark-bg" d="'+sp+'"></path><path class="mini-spark-fg" style="stroke-dasharray:100;stroke-dashoffset:100;" d="'+sp+'"></path></svg><span>'+tl+'</span></div></div></div>';
+    });
+    rhtml += '</div><div style="text-align:center;"><p style="font-size:15px;color:var(--charcoal);opacity:0.8;margin-bottom:20px;">Get a Financial Health Review to walk through this with someone who\'s actually run a job site.</p><a href="financial-health-review.html"><button class="btn-primary">Book My Financial Health Review</button></a></div>';
+    stepDiv.innerHTML = rhtml;
+  }
+
+  container.appendChild(stepDiv);
+
+  // Animate step in
+  setTimeout(function() {
+    if (typeof gsap !== 'undefined' && !prefersReduced) {
+      var fromX = direction === 'next' ? 40 : -40;
+      gsap.fromTo(stepDiv, { x: fromX, opacity: 0 }, {
+        x: 0, opacity: 1, duration: 0.35, ease: 'power2.inOut',
+        onStart: function() { stepDiv.classList.add('active'); }
+      });
+    } else {
+      stepDiv.classList.add('active');
+    }
+    setProgress(idx);
+
+    // Score ring + count-up animation (GSAP timeline sync)
+    if (idx === questions.length) {
+      var ring = document.getElementById('anim-ring');
+      var scoreNum = document.getElementById('score-number');
+      var headline = document.getElementById('score-headline');
+      var totalPts3 = answers.reduce(function(a,b){return a+b;},0);
+      var s100 = Math.round((totalPts3/27)*100);
+      var finalOffset = 377 - (377 * (s100/100));
+
+      if (typeof gsap !== 'undefined' && ring && scoreNum && !prefersReduced) {
+        var tl = gsap.timeline({ delay: 0.2 });
+        var obj = { val: 0 };
+        tl.to(ring, { strokeDashoffset: finalOffset, duration: 2, ease: 'power3.out' }, 0);
+        tl.to(obj, {
+          val: s100, duration: 2, ease: 'power3.out',
+          onUpdate: function() { scoreNum.textContent = Math.floor(obj.val); },
+          onComplete: function() { scoreNum.textContent = s100; }
+        }, 0);
+        if (headline) {
+          tl.to(headline, { opacity: 1, duration: 0.4, ease: 'power2.out' }, 1.7);
+        }
+      } else {
+        if(ring) ring.style.strokeDashoffset = finalOffset;
+        if(scoreNum) scoreNum.textContent = s100;
+        if(headline) headline.style.opacity = 1;
+      }
+    }
+
+    // Sparkline stagger on report
+    if (idx === questions.length + 1) {
+      var sparks = document.querySelectorAll('.mini-spark-fg');
+      if (typeof gsap !== 'undefined' && !prefersReduced) {
+        gsap.to(sparks, { strokeDashoffset: 0, duration: 0.8, stagger: 0.2, ease: 'power2.out', delay: 0.3 });
+      } else {
+        sparks.forEach(function(s) { s.style.strokeDashoffset = '0'; });
+      }
+    }
+  }, 10);
+}
+
+window.selectBranch = function(type, text, btn) {
+  branchChoice = { type: type, text: text };
+  if (btn) {
+    var container = btn.closest('.options-grid');
+    if (container) {
+      var btns = container.querySelectorAll('.opt-btn');
+      btns.forEach(function(b) { b.classList.remove('selected'); });
+      btn.classList.add('selected');
+    }
+  }
+  setTimeout(function() { goNext(); }, 400);
+};
+
+window.selectAnswer = function(val, btn) {
+  answers[currentStep] = val;
+  if (btn) {
+    var container = btn.closest('.options-grid');
+    if (container) {
+      var btns = container.querySelectorAll('.opt-btn');
+      btns.forEach(function(b) { b.classList.remove('selected'); });
+      btn.classList.add('selected');
+    }
+  }
+  setTimeout(function() { goNext(); }, 400);
+};
+
+window.goNext = function() {
+  if (currentStep === -1 && branchChoice !== null) {
+    if (branchChoice.type === 'general') {
+      questions[0] = { cat: 'Profitability Clarity', q: "Do you know your profit margin by client or product line, and which ones actually make you money?", opts: [
+        { text: "No idea, I'd have to dig through paperwork", val: 0 },
+        { text: "Rough idea, but not exact", val: 1 },
+        { text: "I know within 30 days of month-end", val: 2 },
+        { text: "I know in real time, client by client or product by product", val: 3 }
+      ]};
+      questions[1] = { cat: 'Profitability Clarity', q: "Do you know how many months of cash runway you have if revenue stalled tomorrow?", opts: [
+        { text: "No idea", val: 0 },
+        { text: "I could estimate roughly", val: 1 },
+        { text: "I know within a rough range", val: 2 },
+        { text: "I know exactly", val: 3 }
+      ]};
+      questions[2] = { cat: 'Profitability Clarity', q: "If you needed a business loan or line of credit tomorrow, how confident are you that your books would get you approved?", opts: [
+        { text: "Not confident, books aren't in shape for that", val: 0 },
+        { text: "Somewhat, but they'd need work first", val: 1 },
+        { text: "Mostly confident", val: 2 },
+        { text: "Fully confident, books are lender-ready", val: 3 }
+      ]};
+    } else {
+      questions[0] = { cat: 'Profitability Clarity', q: "Do you know if you made or lost money on your last three jobs, and by how much?", opts: [
+        { text: "No idea, I'd have to dig through paperwork", val: 0 },
+        { text: "Rough idea, but not exact", val: 1 },
+        { text: "I know within 30 days of job close", val: 2 },
+        { text: "I know in real time, job by job", val: 3 }
+      ]};
+      questions[1] = { cat: 'Profitability Clarity', q: "How do you currently track retainage and change orders?", opts: [
+        { text: "We don't track it separately", val: 0 },
+        { text: "In a spreadsheet, updated occasionally", val: 1 },
+        { text: "In a spreadsheet, updated weekly", val: 2 },
+        { text: "In our accounting software, tied to each job", val: 3 }
+      ]};
+      questions[2] = { cat: 'Profitability Clarity', q: "Right now, do you know whether you're overbilled or underbilled on your active jobs?", opts: [
+        { text: "No idea", val: 0 },
+        { text: "I could estimate roughly", val: 1 },
+        { text: "I know for my biggest jobs", val: 2 },
+        { text: "I know for every active job", val: 3 }
+      ]};
+    }
+    currentStep++;
+    renderStep(currentStep, 'next');
+  } else if (currentStep >= 0 && currentStep < questions.length && answers[currentStep] !== null) {
+    currentStep++;
+    renderStep(currentStep, 'next');
+  }
+};
+
+window.goBack = function() {
+  if (currentStep > -1) { currentStep--; renderStep(currentStep, 'back'); }
+};
+
+window.showReport = function() {
+  var name = document.getElementById('gf-name').value.trim();
+  var email = document.getElementById('gf-email').value.trim();
+  var bizType = document.getElementById('gf-type').value;
+  var rev = document.getElementById('gf-rev').value;
+  if (!name || !email) { alert("Please enter your name and email to see the results."); return; }
+
+  var totalPts = answers.reduce(function(a,b){return a+b;},0);
+  var score = Math.round((totalPts/27)*100);
+
+  var formData = {
+    name: name,
+    email: email,
+    business_type: bizType,
+    annual_revenue: rev,
+    margin_line_score: score,
+    _subject: 'New Margin Line Score: ' + score + '/100 from ' + name,
+    _cc: 'zensick.agency@gmail.com',
+    _replyto: email
+  };
+
+  fetch('https://formspree.io/f/info@atlasaccountantsusa.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  }).catch(function() {
+    // Fallback: mailto
+    var subject = encodeURIComponent('New Margin Line Score: ' + score + '/100 from ' + name);
+    var body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Business Type: ' + bizType + '\n' +
+      'Annual Revenue: ' + rev + '\n' +
+      'Margin Line Score: ' + score + '/100'
+    );
+    var mailLink = document.createElement('a');
+    mailLink.href = 'mailto:info@atlasaccountantsusa.com,zensick.agency@gmail.com?subject=' + subject + '&body=' + body;
+    mailLink.click();
+  });
+
+  currentStep++;
+  renderStep(currentStep, 'next');
+};
+
+currentStep = -1;
+renderStep(-1);
+</script>
+</body>
+</html>

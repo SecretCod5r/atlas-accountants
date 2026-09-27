@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Atlas Accountants</title>
+<meta name="description" content="Specialized bookkeeping and accounting services for construction, real estate, law firms, retail, and more. CPA-ready financials, payroll, CFO advisory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+  .service-card {
+    background: #fff;
+    border: 1px solid rgba(22,35,59,0.10);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.2,0,0.2,1), box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -12px rgba(22,35,59,0.14);
+    border-color: rgba(224,104,14,0.3);
+  }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(224,104,14,0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .service-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .service-card p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    opacity: 0.85;
+    flex-grow: 1;
+    margin-bottom: 20px;
+  }
+  .service-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--orange);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s ease;
+  }
+  .service-link:hover { gap: 10px; }
+
+  @media (max-width: 900px) {
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .service-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div class="wrap"><nav>
+  <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+  <div class="nav-links">
+    <a href="Atlas_Home_Page.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="margin-line.html">The Margin Line</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="financial-health-review.html" class="nav-cta">Get My Free Review</a>
+  </div>
+</nav></div>
+
+<div class="hero hero-internal">
+  <div class="wrap">
+    <div class="eyebrow reveal">OUR SERVICES</div>
+    <h1 class="text-reveal">Industry-specific accounting that actually understands your business.</h1>
+    <p class="sub reveal">From job costing to trust reconciliation, we deliver CPA-ready financials built for how your industry actually works.</p>
+  </div>
+</div>
+
+<section class="services" style="padding-top: 40px;">
+  <div class="wrap">
+    <div class="service-grid">
+
+      <!-- Construction Accounting -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M3 21H21M5 21V10L12 4L19 10V21M10 21V15H14V21" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Construction Accounting Services</h3>
+        <p>Specialized construction bookkeeping and accounting services with job costing, progress billing, and CPA-ready financials for general contractors and subcontractors.</p>
+        <a class="service-link" href="services-construction.html">Learn More
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12H19M13 6L19 12L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Real Estate Accounting -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M4 21H20M6 21V8L12 3L18 8V21M9 21V12H15V21" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Real Estate Accounting Services</h3>
+        <p>Real estate bookkeeping and accounting services with property-level reporting, expense tracking, and CPA-ready financials for investors and property management.</p>
+        <a class="service-link" href="services-real-estate.html">Learn More
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12H19M13 6L19 12L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Law Firm Accounting -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M12 3L3 8V10H21V8L12 3ZM5 10V18M19 10V18M9 10V18M15 10V18M3 18H21M3 20H21" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Law Firm Accounting Services</h3>
+        <p>Law firm bookkeeping and accounting services focused on trust reconciliation, compliance support, and CPA-ready financial reporting for solo attorneys and boutique firms.</p>
+        <a class="service-link" href="services-law-firm.html">Learn More
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12H19M13 6L19 12L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Small Business Accounting -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M20 7H4C2.9 7 2 7.9 2 9V19C2 20.1 2.9 21 4 21H20C21.1 21 22 20.1 22 19V9C22 7.9 21.1 7 20 7ZM16 7V5C16 3.9 15.1 3 14 3H10C8.9 3 8 3.9 8 5V7" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Small Business Accounting Services</h3>
+        <p>Margin by client or product, cash runway, and lender-ready books for small businesses outside construction and real estate.</p>
+        <a class="service-link" href="services-small-business.html">Learn More
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12H19M13 6L19 12L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Retail Sales Tax & Compliance -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M9 5H7C5.9 5 5 5.9 5 7V19C5 20.1 5.9 21 7 21H17C18.1 21 19 20.1 19 19V7C19 5.9 18.1 5 17 5H15M9 5C9 3.9 9.9 3 11 3H13C14.1 3 15 3.9 15 5M9 5C9 6.1 9.9 7 11 7H13C14.1 7 15 6.1 15 5M9 14L11 16L15 12" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Retail Sales Tax &amp; Compliance</h3>
+        <p>Sales tax compliance, reconciliation, and cleanup for retail businesses. Stay accurate, organized, and prepared across locations and jurisdictions.</p>
+        <a class="service-link" href="services-retail-sales-tax.html">Learn More
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12H19M13 6L19 12L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- CFO Advisory & Financial Strategy -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M16 8V5L19 2L20 4L22 5L19 8H16ZM16 8L12 12M22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2M17 12C17 14.76 14.76 17 12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>CFO Advisory &amp; Financial Strategy</h3>
+        <p>Turn your numbers into clarity, growth, and confident decisions. Strategic financial guidance without the cost of a full-time CFO.</p>
+        <a class="service-link" href="services-cfo-advisory.html">Learn More
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12H19M13 6L19 12L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Payroll Management -->
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M17 21V19C17 16.79 15.21 15 13 15H5C2.79 15 1 16.79 1 19V21M23 21V19C23 17.14 21.73 15.57 20 15.13M16 3.13C17.73 3.57 19 5.14 19 7C19 8.86 17.73 10.43 16 10.87M9 11C11.21 11 13 9.21 13 7C13 4.79 11.21 3 9 3C6.79 3 5 4.79 5 7C5 9.21 6.79 11 9 11Z" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Payroll Management Services</h3>
+        <p>Reliable payroll processing with zero headaches. Accurate, on-time payroll that keeps your team paid and your compliance in order.</p>
+        <a class="service-link" href="services-payroll.html">Learn More
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12H19M13 6L19 12L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA BAND ============ -->
+<section class="final-cta">
+  <div class="wrap reveal">
+    <h2>Ready to get your books in order?</h2>
+    <p>30 minutes. No sales pitch, just a real look at your numbers.</p>
+    <a href="financial-health-review.html"><button class="btn-primary">Get My Free Financial Health Review</button></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+        <p>Bookkeeping and accounting services for construction, real estate, law firms, and more. Wake Forest, NC. Serving all 50 states.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Tools</h4><a href="margin-line.html">The Margin Line</a><a href="financial-health-review.html">Financial Health Review</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="tel:+19194380294">(919) 438-0294</a><a href="mailto:info@atlasaccountantsusa.com">info@atlasaccountantsusa.com</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Atlas Accountants. All rights reserved.</span>
+      <span>Wake Forest, North Carolina</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="atlas-interactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Atlas Accountants</title>
+<meta name="description" content="Get in touch with Atlas Accountants. Phone, email, or book a discovery call. Serving contractors across all 50 states from Wake Forest, NC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact-hero { padding: 80px 0 60px; text-align: center; }
+  .contact-hero h1 { font-size: 48px; margin-bottom: 20px; }
+
+  .contact-layout { max-width: 900px; margin: 0 auto 80px; padding: 0 20px; }
+
+  /* Get in Touch block */
+  .get-in-touch { text-align: center; margin-bottom: 60px; }
+  .get-in-touch h2 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 32px;
+    color: var(--navy); margin-bottom: 30px;
+  }
+  .contact-detail {
+    font-size: 16px; color: var(--charcoal); margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .contact-detail a {
+    color: #3370c4; text-decoration: none; font-weight: 500;
+  }
+  .contact-detail a:hover { text-decoration: underline; }
+  .contact-detail .label { font-weight: 600; color: var(--charcoal); }
+
+  /* Business Hours */
+  .hours-block { text-align: center; margin-bottom: 60px; }
+  .hours-block h2 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px;
+    color: var(--navy); margin-bottom: 16px;
+  }
+  .hours-block p {
+    font-size: 15px; color: var(--charcoal); opacity: 0.8; margin-bottom: 6px;
+  }
+
+  /* Prefer a Call */
+  .call-block { text-align: center; margin-bottom: 40px; }
+  .call-block h2 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px;
+    color: var(--navy); margin-bottom: 10px;
+  }
+  .call-block p {
+    font-size: 15px; color: var(--charcoal); opacity: 0.8; margin-bottom: 30px;
+  }
+
+  /* Calendly embed */
+  .calendly-embed-wrapper {
+    max-width: 800px; margin: 0 auto 80px;
+    border: 1px solid rgba(22,35,59,0.1);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 20px 40px -14px rgba(22,35,59,0.18);
+  }
+
+  /* Contact form below */
+  .contact-form-section {
+    max-width: 600px; margin: 0 auto 100px; padding: 0 20px;
+  }
+  .contact-form-card {
+    background: #fff;
+    border: 1px solid rgba(22,35,59,0.1); border-radius: 12px;
+    padding: 40px; box-shadow: 0 20px 40px -14px rgba(22,35,59,0.18);
+  }
+  .contact-form-card h3 {
+    font-family: 'Fraunces', serif; font-size: 24px; color: var(--navy); margin-bottom: 24px;
+  }
+  .floating-label-group textarea { min-height: 120px; resize: vertical; }
+
+  /* Thank-you state */
+  #contact-ty { display: none; text-align: center; }
+  #contact-ty h3 { margin-bottom: 16px; }
+  #contact-ty p { font-size: 15px; color: var(--charcoal); line-height: 1.6; }
+
+  @media (max-width: 600px) {
+    .contact-hero h1 { font-size: 36px; }
+    .contact-form-card { padding: 28px 24px; }
+  }
+</style>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div class="wrap"><nav>
+  <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+  <div class="nav-links">
+    <a href="Atlas_Home_Page.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="margin-line.html">The Margin Line</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="financial-health-review.html" class="nav-cta">Get My Free Review</a>
+  </div>
+</nav></div>
+
+<div class="contact-hero">
+  <div class="wrap">
+    <div class="eyebrow">CONTACT US</div>
+    <h1 class="text-reveal">Let's talk about your books.</h1>
+  </div>
+</div>
+
+<div class="contact-layout">
+  <!-- Get in Touch -->
+  <div class="get-in-touch reveal">
+    <h2>Get in Touch</h2>
+    <div class="contact-detail">
+      <span>📍</span> <span class="label">Office:</span> Wake Forest, North Carolina
+    </div>
+    <div class="contact-detail">
+      <span>✉️</span> <span class="label">Email:</span> <a href="mailto:info@atlasaccountantsusa.com">info@atlasaccountantsusa.com</a>
+    </div>
+    <div class="contact-detail">
+      <span>📞</span> <span class="label">Phone:</span> <a href="tel:+19194380294">(919) 438-0294</a>
+    </div>
+  </div>
+
+  <!-- Business Hours -->
+  <div class="hours-block reveal">
+    <h2>Business Hours</h2>
+    <p>Monday &ndash; Friday: 9:00 AM to 6:00 PM</p>
+    <p>Saturday &amp; Sunday: Closed</p>
+  </div>
+
+  <!-- Prefer a Call -->
+  <div class="call-block reveal">
+    <h2>Prefer a Call?</h2>
+    <p>Not sure where to start? Book a quick discovery call.</p>
+  </div>
+</div>
+
+<!-- Calendly Inline Embed -->
+<div class="calendly-embed-wrapper reveal">
+  <iframe
+    src="https://calendly.com/anoop-atlasaccountantsusa/30min?embed_domain=atlasaccountantsusa.com&embed_type=Inline"
+    width="100%"
+    height="700"
+    frameborder="0"
+    scrolling="no"
+    style="min-width: 320px; border: none;"
+    title="Book a Discovery Call with Atlas Accountants"
+  ></iframe>
+</div>
+
+<!-- Send a Message form -->
+<div class="contact-form-section">
+  <div class="contact-form-card reveal" id="contact-form-wrap">
+    <h3>Send a Message</h3>
+    <div class="floating-label-group">
+      <input type="text" id="contact-name" placeholder=" " required>
+      <label for="contact-name">Your Name</label>
+    </div>
+    <div class="floating-label-group">
+      <input type="email" id="contact-email" placeholder=" " required>
+      <label for="contact-email">Email Address</label>
+    </div>
+    <div class="floating-label-group">
+      <input type="text" id="contact-company" placeholder=" ">
+      <label for="contact-company">Company (optional)</label>
+    </div>
+    <div class="floating-label-group">
+      <textarea id="contact-message" placeholder=" " required></textarea>
+      <label for="contact-message">How can we help?</label>
+    </div>
+    <button type="button" class="btn-primary" style="width:100%; margin-top:10px;" onclick="submitContact()">Send Message</button>
+  </div>
+
+  <div class="contact-form-card" id="contact-ty">
+    <h3>Message Sent</h3>
+    <p>Thanks for reaching out. We'll get back to you within one business day.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+        <p>Bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors. Wake Forest, NC. Serving all 50 states.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Tools</h4><a href="margin-line.html">The Margin Line</a><a href="financial-health-review.html">Financial Health Review</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="tel:+19194380294">(919) 438-0294</a><a href="mailto:info@atlasaccountantsusa.com">info@atlasaccountantsusa.com</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Atlas Accountants. All rights reserved.</span>
+      <span>Wake Forest, North Carolina</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="atlas-interactions.js"></script>
+
+<script>
+function submitContact() {
+  var name = document.getElementById('contact-name').value.trim();
+  var email = document.getElementById('contact-email').value.trim();
+  var company = document.getElementById('contact-company').value.trim();
+  var message = document.getElementById('contact-message').value.trim();
+
+  if (!name || !email || !message) {
+    alert('Please fill in your name, email, and message.');
+    return;
+  }
+
+  var formData = {
+    name: name,
+    email: email,
+    company: company,
+    message: message,
+    _subject: 'New Contact Form Message from ' + name,
+    _cc: 'zensick.agency@gmail.com',
+    _replyto: email
+  };
+
+  fetch('https://formspree.io/f/info@atlasaccountantsusa.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  }).then(function(res) {
+    if (res.ok) {
+      document.getElementById('contact-form-wrap').style.display = 'none';
+      document.getElementById('contact-ty').style.display = 'block';
+    } else {
+      // Fallback: mailto
+      var subject = encodeURIComponent('New Contact Form Message from ' + name);
+      var body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Company: ' + company + '\n' +
+        'Message: ' + message
+      );
+      window.location.href = 'mailto:info@atlasaccountantsusa.com,zensick.agency@gmail.com?subject=' + subject + '&body=' + body;
+      document.getElementById('contact-form-wrap').style.display = 'none';
+      document.getElementById('contact-ty').style.display = 'block';
+    }
+  }).catch(function() {
+    // Network error fallback: mailto
+    var subject = encodeURIComponent('New Contact Form Message from ' + name);
+    var body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Email: ' + email + '\n' +
+      'Company: ' + company + '\n' +
+      'Message: ' + message
+    );
+    window.location.href = 'mailto:info@atlasaccountantsusa.com,zensick.agency@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('contact-form-wrap').style.display = 'none';
+    document.getElementById('contact-ty').style.display = 'block';
+  });
+}
+</script>
+</body>
+</html>

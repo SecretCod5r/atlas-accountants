@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Small Business Accounting | Atlas Accountants</title>
+<meta name="description" content="CPA-ready bookkeeping and monthly financials for small businesses. Margin by client, cash runway visibility, and lender-ready books.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  :root {
+    --accent: #E0680E;
+    --accent-rgb: 224, 104, 14;
+  }
+  .icp-hero {
+    padding: 80px 0 60px;
+    background: var(--navy);
+    color: var(--offwhite);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .icp-hero h1 { color: var(--offwhite); position: relative; z-index: 2; }
+  .icp-hero .sub { color: var(--slate); position: relative; z-index: 2; }
+  .hero-graphic {
+    position: absolute; right: -50px; bottom: -50px; opacity: 0.06; width: 400px; height: 400px;
+  }
+
+  /* Pain point horizontal scroll cards */
+  .pain-section {
+    padding: 80px 0;
+    overflow: hidden;
+  }
+  .pain-section .section-header {
+    text-align: center; max-width: 640px; margin: 0 auto 50px;
+  }
+  .pain-section .section-header h2 {
+    font-family: 'Fraunces', serif; font-size: 32px; color: var(--navy); margin-bottom: 12px;
+  }
+  .pain-section .section-header p {
+    font-size: 15px; color: var(--charcoal); opacity: 0.8;
+  }
+  .pain-track {
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+    padding: 0 40px;
+  }
+  .pain-card {
+    flex: 0 0 420px;
+    background: #fff;
+    border: 1px solid rgba(22,35,59,0.1);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(22,35,59,0.06);
+    position: relative;
+    min-height: 320px;
+  }
+  .pain-state {
+    padding: 40px;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .pain-before {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .pain-after {
+    opacity: 0;
+    transform: translateX(20px);
+    background: rgba(var(--accent-rgb), 0.03);
+  }
+  .pain-card:hover .pain-before,
+  .pain-card.flipped .pain-before {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  .pain-card:hover .pain-after,
+  .pain-card.flipped .pain-after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .pain-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 16px;
+  }
+  .pain-before .pain-label { color: var(--slate); }
+  .pain-after .pain-label { color: var(--accent); }
+  .pain-state h3 {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    color: var(--navy); margin-bottom: 14px; line-height: 1.3;
+  }
+  .pain-state p {
+    font-size: 14.5px; line-height: 1.6; color: var(--charcoal); opacity: 0.85;
+  }
+  .pain-hint {
+    position: absolute; bottom: 16px; right: 20px;
+    font-size: 11px; font-weight: 600; color: var(--slate);
+    opacity: 0.5; transition: opacity 0.3s;
+  }
+  .pain-card:hover .pain-hint { opacity: 0; }
+
+  @media (max-width: 768px) {
+    .pain-track { flex-wrap: wrap; padding: 0 20px; }
+    .pain-card { flex: 1 1 100%; min-width: 100%; }
+    .pain-state { position: relative; }
+    .pain-after { position: absolute; }
+  }
+</style>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div class="wrap"><nav>
+  <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+  <div class="nav-links">
+    <a href="Atlas_Home_Page.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="margin-line.html">The Margin Line</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="financial-health-review.html" class="nav-cta">Get My Free Review</a>
+  </div>
+</nav></div>
+
+<div class="icp-hero">
+  <svg class="hero-graphic" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 L100,0 L100,100 Z" fill="var(--accent)"/></svg>
+  <div class="wrap">
+    <div class="eyebrow" style="color: var(--accent);">SMALL BUSINESSES, ALL INDUSTRIES</div>
+    <h1 class="text-reveal">Know exactly where your profit is coming from.</h1>
+    <p class="sub">CPA-ready bookkeeping and monthly financials for small businesses outside construction and real estate, built with the same job-level discipline we bring to every client.</p>
+    <div class="cta-row">
+      <a href="financial-health-review.html"><button class="btn-primary">Get My Free Financial Health Review</button></a>
+    </div>
+  </div>
+</div>
+
+<section class="pain-section" id="pain-hscroll">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <h2 class="text-reveal">The specific financial challenges of running a small business.</h2>
+      <p>You don't need generic bookkeeping. You need to know which parts of the business are actually working.</p>
+    </div>
+  </div>
+
+  <div class="pain-track" id="pain-track">
+    <div class="pain-card">
+      <div class="pain-state pain-before">
+        <div class="pain-label">Without Atlas</div>
+        <h3>No Visibility Into Margin by Client or Product</h3>
+        <p>You know your total revenue, but not which clients or product lines are actually profitable once real costs are counted.</p>
+      </div>
+      <div class="pain-state pain-after">
+        <div class="pain-label">With Atlas</div>
+        <h3>Margin Tracked at the Client and Product Level</h3>
+        <p>We track margin at the client and product level, so you can see which parts of the business are worth doing more of, and which are quietly costing you money.</p>
+      </div>
+      <span class="pain-hint">Hover to see the fix</span>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-state pain-before">
+        <div class="pain-label">Without Atlas</div>
+        <h3>Cash Runway You Can't See Coming</h3>
+        <p>Revenue can look healthy right up until it doesn't. A slow month hits and you're scrambling to find out how long you can cover expenses.</p>
+      </div>
+      <div class="pain-state pain-after">
+        <div class="pain-label">With Atlas</div>
+        <h3>Clear Cash Runway, Always Current</h3>
+        <p>We keep your books current enough that you always know how many months of runway you have; not scrambling to find out after a slow month has already hit.</p>
+      </div>
+      <span class="pain-hint">Hover to see the fix</span>
+    </div>
+
+    <div class="pain-card">
+      <div class="pain-state pain-before">
+        <div class="pain-label">Without Atlas</div>
+        <h3>Books That Aren't Lender-Ready</h3>
+        <p>If you needed a business loan or line of credit tomorrow, could your books get you approved without a scramble?</p>
+      </div>
+      <div class="pain-state pain-after">
+        <div class="pain-label">With Atlas</div>
+        <h3>Financials Ready for Any Conversation</h3>
+        <p>We keep your financials clean and current, so financing conversations are easy instead of stressful.</p>
+      </div>
+      <span class="pain-hint">Hover to see the fix</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA BAND ============ -->
+<section class="final-cta">
+  <div class="wrap reveal">
+    <h2>Let's find out what your business is really making you.</h2>
+    <p>30 minutes. No sales pitch, just a real look at your books.</p>
+    <a href="financial-health-review.html"><button class="btn-primary">Get My Free Financial Health Review</button></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+        <p>Bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors. Wake Forest, NC. Serving all 50 states.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Tools</h4><a href="margin-line.html">The Margin Line</a><a href="financial-health-review.html">Financial Health Review</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="tel:+19194380294">(919) 438-0294</a><a href="mailto:info@atlasaccountantsusa.com">info@atlasaccountantsusa.com</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Atlas Accountants. All rights reserved.</span>
+      <span>Wake Forest, North Carolina</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="atlas-interactions.js"></script>
+
+<script>
+(function() {
+  "use strict";
+  var prefersReduced = window.AtlasInteractions && window.AtlasInteractions.prefersReduced;
+
+  /* Horizontal scroll for pain point cards (desktop) */
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !prefersReduced && window.innerWidth > 768) {
+    var track = document.getElementById('pain-track');
+    var section = document.getElementById('pain-hscroll');
+    if (track && section) {
+      var cards = track.querySelectorAll('.pain-card');
+      var totalWidth = 0;
+      cards.forEach(function(c) { totalWidth += c.offsetWidth + 30; });
+      var scrollDist = totalWidth - window.innerWidth + 80;
+
+      if (scrollDist > 0) {
+        gsap.to(track, {
+          x: -scrollDist,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 15%',
+            end: '+=' + scrollDist,
+            pin: true,
+            scrub: 0.5,
+            anticipatePin: 1,
+          }
+        });
+      }
+    }
+  }
+
+  /* Mobile tap toggle for pain cards */
+  if (window.innerWidth <= 768) {
+    var cards = document.querySelectorAll('.pain-card');
+    cards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        card.classList.toggle('flipped');
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

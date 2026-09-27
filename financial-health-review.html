@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Financial Health Review | Atlas Accountants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .fhr-hero {
+    padding: 80px 0 60px;
+    background: var(--offwhite);
+    border-bottom: 1px solid rgba(22,35,59,0.08);
+  }
+  .fhr-hero .wrap {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+  .fhr-content {
+    flex: 1;
+  }
+  .fhr-form-container {
+    width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(22,35,59,0.10);
+    box-shadow: 0 20px 40px -14px rgba(22,35,59,0.18);
+    padding: 36px 32px;
+    flex-shrink: 0;
+  }
+  
+  .fhr-hero h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: none;
+  }
+  .fhr-hero .sub {
+    text-align: left;
+    margin: 0 0 40px 0;
+    font-size: 18px;
+    max-width: 500px;
+  }
+  .pain-points {
+    list-style: none;
+    margin-bottom: 40px;
+  }
+  .pain-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 15.5px;
+    line-height: 1.5;
+    color: var(--charcoal);
+  }
+  .pain-points li svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--orange);
+  }
+
+  /* Form */
+  .fhr-form-container h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .form-group {
+    margin-bottom: 16px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(22,35,59,0.15);
+    border-radius: 6px;
+    font-family: 'Sen', sans-serif;
+    font-size: 14.5px;
+    background: #FAFAFA;
+  }
+  .form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--orange);
+    background: #fff;
+  }
+  .fhr-form-container .btn-primary {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  /* Sections */
+  .section-light {
+    padding: 90px 0;
+    background: #fff;
+  }
+  .section-dark {
+    padding: 90px 0;
+    background: var(--navy);
+    color: var(--offwhite);
+  }
+  .section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 50px;
+  }
+  .section-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    margin-bottom: 16px;
+    color: inherit;
+  }
+
+  /* 3-Step Process — slide-in */
+  .process-pin-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .process-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+  .process-step {
+    flex: 1;
+    position: relative;
+    padding: 30px;
+    background: rgba(22,35,59,0.03);
+    border-radius: 10px;
+    max-width: 320px;
+  }
+  .process-step .step-num {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--orange);
+    opacity: 0.2;
+    position: absolute;
+    top: 20px; right: 20px;
+    line-height: 1;
+  }
+  .process-step h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .process-step p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+  }
+
+  /* FAQs */
+  .faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(22,35,59,0.1);
+    padding-bottom: 24px;
+  }
+  .faq-item h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .faq-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    opacity: 0.85;
+  }
+
+  /* Founder */
+  .founder-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 50px;
+    color: var(--charcoal);
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(22,35,59,0.1);
+  }
+  .founder-box h2 { color: var(--navy); }
+  .founder-box p { font-size: 16px; line-height: 1.7; margin-bottom: 20px; }
+
+  /* Who it's for */
+  .fit-grid {
+    display: flex;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .fit-col {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(22,35,59,0.1);
+  }
+  .fit-col h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .fit-col.for h4 { color: #2E7D32; }
+  .fit-col.not-for h4 { color: #D32F2F; }
+  .fit-col ul { list-style: none; }
+  .fit-col li { margin-bottom: 12px; font-size: 14.5px; display: flex; gap: 8px; }
+
+  @media (max-width: 850px) {
+    .fhr-hero .wrap { flex-direction: column; }
+    .fhr-form-container { width: 100%; }
+    .process-grid, .fit-grid { flex-direction: column; }
+  }
+
+  /* Thank you state */
+  #ty-state { display: none; text-align: center; padding: 40px 20px; }
+  #ty-state h3 { font-family: 'Fraunces', serif; font-size: 28px; color: var(--navy); margin-bottom: 16px; }
+  #ty-state p { font-size: 16px; color: var(--charcoal); line-height: 1.6; margin-bottom: 24px; }
+</style>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+<div class="wrap"><nav>
+  <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+  <div class="nav-links">
+    <a href="Atlas_Home_Page.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="margin-line.html">The Margin Line</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="financial-health-review.html" class="nav-cta">Get My Free Review</a>
+  </div>
+</nav></div>
+
+<section class="fhr-hero">
+  <div class="wrap">
+    <div class="fhr-content">
+      <div class="eyebrow">FREE FINANCIAL HEALTH REVIEW</div>
+      <h1>Know which jobs are actually making you money.</h1>
+      <p class="sub">Built for contractors, remodelers, and specialty trade subs who want their books to finally make sense.</p>
+      
+      <ul class="pain-points">
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <div><b>Are your books behind?</b> You shouldn't have to wait months to know if a job was profitable.</div>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <div><b>Guessing at job profitability?</b> We break out revenue, cost to complete, and retainage so you see the real margin.</div>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <div><b>Tired of cash surprises?</b> Find out where the money actually went between the draw and the final payout.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="fhr-form-container" id="fhr-form-wrap">
+      <h3>Request Your Review</h3>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="fhr-name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="fhr-email" placeholder="you@company.com" required>
+      </div>
+      <div class="form-group">
+        <label>Company</label>
+        <input type="text" id="fhr-company" placeholder="Company Name" required>
+      </div>
+      <div class="form-group">
+        <label>What's the core issue?</label>
+        <select id="fhr-issue">
+          <option>Messy books</option>
+          <option>Job profitability unknown</option>
+          <option>Cash flow surprises</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Rough Monthly Revenue</label>
+        <select id="fhr-revenue">
+          <option>Under $40K</option>
+          <option>$40K - $80K</option>
+          <option>$80K+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Backlog Status</label>
+        <select id="fhr-backlog">
+          <option>Mostly current</option>
+          <option>A few months behind</option>
+          <option>1+ years behind</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="submitForm()">Get My Free Financial Health Review</button>
+    </div>
+
+    <div class="fhr-form-container" id="ty-state">
+      <h3>Request Received</h3>
+      <p>We've received your details. We will review your submission and reach out within 24 hours to schedule your Financial Health Review.</p>
+      <div style="background: rgba(22,35,59,0.05); padding: 20px; border-radius: 8px; text-align: left; margin-top: 20px;">
+        <p style="margin-bottom: 10px; font-weight: 700; font-size: 14px;">While you wait:</p>
+        <a href="services.html" style="color: var(--orange); font-weight: 600; text-decoration: none; font-size: 14px; display: block; margin-bottom: 8px;">Explore our services &rarr;</a>
+        <a href="margin-line.html" style="color: var(--orange); font-weight: 600; text-decoration: none; font-size: 14px; display: block;">Check your Margin Line score &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <h2 style="color: var(--navy)">How It Works</h2>
+      <p style="color: var(--charcoal); opacity: 0.8;">Three simple steps to getting financial clarity.</p>
+    </div>
+    <div class="process-pin-wrapper" id="process-pin">
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h4>Tell us about your books</h4>
+          <p>Fill out the form above so we understand your business type, revenue range, and current pain points.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h4>We review together</h4>
+          <p>On a 30-minute call, we'll look at your current job-cost setup and identify specific gaps without the sales pressure.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h4>Get a specific action plan</h4>
+          <p>Walk away with concrete findings on what to fix, and exactly what it would look like if we handled it for you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" style="background: #FAFAFA; border-top: 1px solid rgba(22,35,59,0.08);">
+  <div class="wrap">
+    <div class="fit-grid reveal">
+      <div class="fit-col for">
+        <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Who it's for</h4>
+        <ul>
+          <li>&bull; Residential GCs &amp; Remodelers</li>
+          <li>&bull; Specialty Trade Subcontractors</li>
+          <li>&bull; Real Estate Investors ($500K+ annual)</li>
+          <li>&bull; Builders wanting real job-costing</li>
+        </ul>
+      </div>
+      <div class="fit-col not-for">
+        <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> Who it's NOT for</h4>
+        <ul>
+          <li>&bull; Businesses looking for Tax Preparation</li>
+          <li>&bull; Businesses needing Tax Planning advice</li>
+          <li>&bull; Non-construction general retail</li>
+          <li>&bull; DIYers who just want software support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="wrap">
+    <div class="founder-box reveal">
+      <h2>Built by someone who has read a job cost report from the contractor's side of the desk.</h2>
+      <p>Atlas Accountants isn't a generalist firm that decided to add "construction" to a drop-down menu of 50 other industries. I spent 10 years working directly in the construction industry, handling estimating, procurement, and draw schedules, before I became an accountant.</p>
+      <p>I know what a messy WIP schedule does to a bonding line. I know what unbilled change orders do to your cash flow. And I built Atlas to provide the CPA-ready financials and accurate job costing I wished I had when I was running projects.</p>
+      <div style="display: flex; align-items: center; gap: 10px; margin-top: 30px; border-top: 1px solid rgba(22,35,59,0.1); padding-top: 20px;">
+        <span class="chip" style="background: rgba(224,104,14,0.1); color: var(--orange); border:none;">Intuit QuickBooks Certified</span>
+        <span style="font-weight: 700; font-family: 'Fraunces', serif; color: var(--navy); font-size: 18px;">Founder, Atlas Accountants</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <h2 style="color: var(--navy)">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <h4>How is this different from any other construction bookkeeper?</h4>
+        <p>We don't just "understand construction." We deliver job-costed monthly statements and draw-schedule tracking built from real experience running job sites. We focus on the exact numbers that show if a project is actually making you money.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4>Can I trust a small shop?</h4>
+        <p>Our size is an advantage. You get direct access to the person doing the work, not a rotating junior staffer who doesn't understand your business. You talk to the same accountant every month.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4>Is this worth $350–$1,000/month over doing it myself?</h4>
+        <p>A single mispriced job or missed change order typically costs a contractor far more than a year of our bookkeeping fees. We help you anchor to the cost of not knowing your margins, so you stop leaving money on the table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="Atlas_Home_Page.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+        <p>Bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors. Wake Forest, NC. Serving all 50 states.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <a href="margin-line.html">The Margin Line</a>
+          <a href="financial-health-review.html">Financial Health Review</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+19194380294">(919) 438-0294</a>
+          <a href="mailto:info@atlasaccountantsusa.com">info@atlasaccountantsusa.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Atlas Accountants. All rights reserved.</span>
+      <span>Wake Forest, North Carolina</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="atlas-interactions.js"></script>
+
+<script>
+  function submitForm() {
+    var name = document.getElementById('fhr-name').value.trim();
+    var email = document.getElementById('fhr-email').value.trim();
+    var company = document.getElementById('fhr-company').value.trim();
+    var issue = document.getElementById('fhr-issue').value;
+    var revenue = document.getElementById('fhr-revenue').value;
+    var backlog = document.getElementById('fhr-backlog').value;
+
+    if (!name || !email || !company) {
+      alert('Please fill in your name, email, and company.');
+      return;
+    }
+
+    var formData = {
+      name: name,
+      email: email,
+      company: company,
+      core_issue: issue,
+      monthly_revenue: revenue,
+      backlog_status: backlog,
+      _subject: 'New Financial Health Review Request from ' + name,
+      _cc: 'zensick.agency@gmail.com',
+      _replyto: email
+    };
+
+    fetch('https://formspree.io/f/info@atlasaccountantsusa.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(formData)
+    }).then(function(res) {
+      if (res.ok) {
+        document.getElementById('fhr-form-wrap').style.display = 'none';
+        document.getElementById('ty-state').style.display = 'block';
+        window.open('https://calendly.com/anoop-atlasaccountantsusa/30min', '_blank');
+      } else {
+        // Fallback: use mailto if Formspree endpoint not configured yet
+        var subject = encodeURIComponent('New Financial Health Review Request from ' + name);
+        var body = encodeURIComponent(
+          'Name: ' + name + '\n' +
+          'Email: ' + email + '\n' +
+          'Company: ' + company + '\n' +
+          'Core Issue: ' + issue + '\n' +
+          'Monthly Revenue: ' + revenue + '\n' +
+          'Backlog Status: ' + backlog
+        );
+        window.location.href = 'mailto:info@atlasaccountantsusa.com,zensick.agency@gmail.com?subject=' + subject + '&body=' + body;
+        document.getElementById('fhr-form-wrap').style.display = 'none';
+        document.getElementById('ty-state').style.display = 'block';
+        setTimeout(function() {
+          window.open('https://calendly.com/anoop-atlasaccountantsusa/30min', '_blank');
+        }, 500);
+      }
+    }).catch(function() {
+      // Network error fallback: use mailto
+      var subject = encodeURIComponent('New Financial Health Review Request from ' + name);
+      var body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Company: ' + company + '\n' +
+        'Core Issue: ' + issue + '\n' +
+        'Monthly Revenue: ' + revenue + '\n' +
+        'Backlog Status: ' + backlog
+      );
+      window.location.href = 'mailto:info@atlasaccountantsusa.com,zensick.agency@gmail.com?subject=' + subject + '&body=' + body;
+      document.getElementById('fhr-form-wrap').style.display = 'none';
+      document.getElementById('ty-state').style.display = 'block';
+      setTimeout(function() {
+        window.open('https://calendly.com/anoop-atlasaccountantsusa/30min', '_blank');
+      }, 500);
+    });
+  }
+
+  /* Slide-in 3-step process */
+  (function() {
+    "use strict";
+    var prefersReduced = window.AtlasInteractions && window.AtlasInteractions.prefersReduced;
+    var pinWrapper = document.getElementById('process-pin');
+    if (!pinWrapper) return;
+
+    var steps = pinWrapper.querySelectorAll('.process-step');
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || prefersReduced || !steps.length) return;
+
+    // Start: all steps invisible and shifted right
+    steps.forEach(function(s, i) {
+      gsap.set(s, { opacity: 0, x: 60 + (i * 20), scale: 0.95 });
+    });
+
+    // On scroll: each step slides in from right, one after another
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: pinWrapper,
+        start: 'top 60%',
+        end: 'top 10%',
+        scrub: 0.4,
+      }
+    });
+
+    steps.forEach(function(step, i) {
+      tl.to(step, {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 1,
+        ease: 'power2.out',
+      }, i * 0.7);
+    });
+  })();
+</script>
+</body>
+</html>
