@@ -46,31 +46,35 @@ const pagesMetadata = {
         title: 'Bookkeeping Services for Contractors & Real Estate',
         desc: 'Explore our specialized bookkeeping services for residential GCs, remodelers, specialty trades, and real estate investors. Job-costed and CPA-ready.',
     },
-    'services-cfo-advisory/index.html': {
+    'services/cfo-advisory/index.html': {
         title: 'CFO Advisory Services for Contractors | Atlas Accountants',
         desc: 'Fractional CFO advisory services helping contractors and real estate investors scale profitably with data-driven financial strategies.',
     },
-    'services-construction/index.html': {
+    'services/construction-bookkeeping/index.html': {
         title: 'Construction Bookkeeping & Job Costing | Atlas Accountants',
         desc: 'Expert bookkeeping and job costing for residential general contractors and remodelers. Know exactly which jobs make you money.',
     },
-    'services-law-firm/index.html': {
+    'services/job-costing/index.html': {
+        title: 'Construction Job Costing Services | Atlas Accountants',
+        desc: 'Stop guessing if your projects are profitable. We provide construction job costing services and setup in QuickBooks for residential contractors.',
+    },
+    'services/law-firms/index.html': {
         title: 'Law Firm Bookkeeping Services | Atlas Accountants',
         desc: 'Specialized bookkeeping and trust accounting for law firms. Keep your IOLTA compliant and your financials CPA-ready.',
     },
-    'services-payroll/index.html': {
+    'services/payroll/index.html': {
         title: 'Payroll Services for Contractors | Atlas Accountants',
         desc: 'Accurate payroll processing and certified payroll reporting for specialty trades and construction businesses. Stay compliant effortlessly.',
     },
-    'services-real-estate/index.html': {
+    'services/real-estate-investors/index.html': {
         title: 'Real Estate Accounting & Bookkeeping | Atlas Accountants',
         desc: 'Property-level P&Ls and accurate capitalization tracking for real estate investors, landlords, and house flippers.',
     },
-    'services-retail-sales-tax/index.html': {
+    'services/retail-sales-tax/index.html': {
         title: 'Retail Sales Tax Compliance | Atlas Accountants',
         desc: 'Sales tax reconciliation and filing compliance for retail businesses. Keep your multi-state sales tax accurate and organized.',
     },
-    'services-small-business/index.html': {
+    'services/small-business/index.html': {
         title: 'Small Business Bookkeeping | Atlas Accountants',
         desc: 'Monthly CPA-ready bookkeeping for small businesses. Clean, reconciled financials that hold up to scrutiny.',
     }
