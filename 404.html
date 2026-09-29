@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Atlas Accountants</title>
+<meta name="description" content="The page you're looking for doesn't exist. Head back to Atlas Accountants homepage or explore our services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<style>
+  .error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .error-content {
+    max-width: 520px;
+  }
+  .error-code {
+    font-family: 'Fraunces', serif;
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.12;
+  }
+  .error-content h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .error-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    opacity: 0.8;
+    margin-bottom: 36px;
+  }
+  .error-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .error-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--orange);
+    text-decoration: none;
+    transition: gap 0.2s ease;
+  }
+  .error-links a:hover { gap: 12px; }
+  .error-links .btn-primary {
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .error-code { font-size: 80px; }
+    .error-content h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap"><nav>
+  <a href="/" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/margin-line">The Margin Line</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/about">About</a>
+    <a href="/financial-health-review" class="nav-cta">Get My Free Review</a>
+  </div>
+  <button class="mobile-menu-btn" aria-label="Toggle menu" onclick="toggleMobileMenu()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+</nav></div>
+
+<div class="error-page">
+  <div class="error-content">
+    <div class="error-code">404</div>
+    <h1>This page went off the ledger.</h1>
+    <p>The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+    <div class="error-links">
+      <a href="/"><button class="btn-primary">Back to Homepage</button></a>
+      <a href="/services">Explore Our Services
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/financial-health-review">Get a Free Financial Health Review
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/margin-line">Take The Margin Line Check
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="atlas-interactions.js"></script>
+<div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+</body>
+</html>

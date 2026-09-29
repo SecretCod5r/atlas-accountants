@@ -1,0 +1,14 @@
+# Atlas Accountants — robots.txt
+# https://atlasaccountantsusa.com
+
+User-agent: *
+Allow: /
+
+# Disallow config/agent directories
+Disallow: /.agents/
+Disallow: /.git/
+Disallow: /data/
+Disallow: /scratch/
+
+# Sitemap location
+Sitemap: https://atlasaccountantsusa.com/sitemap.xml

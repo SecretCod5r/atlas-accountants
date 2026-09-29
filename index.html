@@ -1,27 +1,46 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atlas Accountants | Job-Costed Bookkeeping for Contractors</title>
 <meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors.">
+<meta property="og:title" content="Atlas Accountants | Job-Costed Bookkeeping for Contractors">
+<meta property="og:description" content="CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlasaccountantsusa.com/">
+<meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas Accountants | Job-Costed Bookkeeping for Contractors">
+<meta name="twitter:description" content="CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<link rel="canonical" href="https://atlasaccountantsusa.com/">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<!-- Google Analytics (GA4) — Replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+</script>
 </head>
 <body>
 
 <div class="wrap"><nav>
-  <a href="index.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+  <a href="/" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
   <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="margin-line.html">The Margin Line</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="about.html">About</a>
-    <a href="financial-health-review.html" class="nav-cta">Get My Free Review</a>
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/margin-line">The Margin Line</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/about">About</a>
+    <a href="/financial-health-review" class="nav-cta">Get My Free Review</a>
   </div>
   <button class="mobile-menu-btn" aria-label="Toggle menu" onclick="toggleMobileMenu()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
 </nav></div>
@@ -33,7 +52,7 @@
     <h1 class="text-reveal">The monthly statement that finally tells you <span class="hl">which jobs are making you money.</span></h1>
     <p class="sub">Atlas Accountants delivers <b>CPA-ready bookkeeping</b> and job-costed financial statements for contractors, remodelers, and real estate investors. Built by someone who ran job sites before he ever read a P&amp;L.</p>
     <div class="cta-row">
-      <a href="financial-health-review.html"><button class="btn-primary">Get My Free Financial Health Review</button></a>
+      <a href="/financial-health-review"><button class="btn-primary">Get My Free Financial Health Review</button></a>
       <button class="btn-secondary" id="ml-start">See The Margin Line</button>
     </div>
   </div>
@@ -155,7 +174,7 @@
         </div>
         <h3>Residential GCs &amp; Remodelers</h3>
         <p>Draw schedules, retainage, and job costing that finally add up across every active project.</p>
-        <a class="service-link" href="services-construction.html">Construction Accounting
+        <a class="service-link" href="/services-construction">Construction Accounting
           <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -165,7 +184,7 @@
         </div>
         <h3>Real Estate Investors &amp; Landlords</h3>
         <p>Property-level P&amp;Ls so you know which units are actually paying off, not just your total revenue.</p>
-        <a class="service-link" href="services-real-estate.html">Real Estate Accounting
+        <a class="service-link" href="/services-real-estate">Real Estate Accounting
           <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -175,7 +194,7 @@
         </div>
         <h3>Specialty Trade Subcontractors</h3>
         <p>Certified payroll and per-job margins, tracked without the spreadsheet chaos at month-end.</p>
-        <a class="service-link" href="services-specialty-trade.html">See All Services
+        <a class="service-link" href="/services">See All Services
           <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -185,7 +204,7 @@
         </div>
         <h3>Small Businesses, All Industries</h3>
         <p>Margin by client or product, cash runway, and lender-ready books, wherever your business operates.</p>
-        <a class="service-link" href="services-small-business.html">Small Business Accounting
+        <a class="service-link" href="/services-small-business">Small Business Accounting
           <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -201,7 +220,7 @@
       <div class="eyebrow">THE MARGIN LINE</div>
       <h2>How healthy is your Margin Line? Find out in 90 seconds.</h2>
       <p>A free scorecard for your job numbers. Answer 9 quick questions, get an instant score out of 100, and see exactly where the gaps are. Takes about 90 seconds.</p>
-      <a href="margin-line.html"><button class="btn-primary">Take The Margin Line Check</button></a>
+      <a href="/margin-line"><button class="btn-primary">Take The Margin Line Check</button></a>
     </div>
     <div class="quiz-card reveal" id="ml-end" style="cursor: pointer;" onclick="window.location.href='margin-line.html'">
       <div class="quiz-top">
@@ -222,7 +241,7 @@
   <div class="wrap reveal">
     <h2>Let's find out what your jobs are really making you.</h2>
     <p>30 minutes. No sales pitch, just a real look at your books.</p>
-    <a href="financial-health-review.html"><button class="btn-primary">Get My Free Financial Health Review</button></a>
+    <a href="/financial-health-review"><button class="btn-primary">Get My Free Financial Health Review</button></a>
   </div>
 </section>
 
@@ -231,32 +250,37 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
+        <a href="/" class="logo-link"><img src="assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
         <p>Bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors. Wake Forest, NC. Serving all 50 states.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="contact.html">Contact</a>
+          <a href="/about">About</a>
+          <a href="/services">Services</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/contact">Contact</a>
         </div>
         <div class="footer-col">
           <h4>Tools</h4>
-          <a href="margin-line.html">The Margin Line</a>
-          <a href="financial-health-review.html">Financial Health Review</a>
+          <a href="/margin-line">The Margin Line</a>
+          <a href="/financial-health-review">Financial Health Review</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="tel:+19194380294">(919) 438-0294</a>
           <a href="mailto:info@atlasaccountantsusa.com">info@atlasaccountantsusa.com</a>
         </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms &amp; Conditions</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Atlas Accountants. All rights reserved.</span>
-      <span>Wake Forest, North Carolina</span>
+      <span><a href="/privacy-policy" style="color: inherit; text-decoration: none; opacity: 0.8;">Privacy Policy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: none; opacity: 0.8;">Terms</a> &middot; Wake Forest, North Carolina</span>
     </div>
   </div>
 </footer>
@@ -521,5 +545,33 @@
 </script>
 
 <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#16233B; color:#F4EFE6; padding:16px 24px; z-index:99998; font-size:14px; box-shadow:0 -4px 20px rgba(0,0,0,0.15);">
+  <div style="max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <p style="margin:0; flex:1; min-width:280px; line-height:1.5;">We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our <a href="/privacy-policy" style="color:#E0680E; text-decoration:underline;">Privacy Policy</a>.</p>
+    <div style="display:flex; gap:10px; flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#E0680E; color:#F4EFE6; border:none; padding:10px 22px; border-radius:6px; font-family:'Sen',sans-serif; font-size:14px; font-weight:700; cursor:pointer;">Accept</button>
+      <button onclick="declineCookies()" style="background:transparent; color:#88A5B7; border:1px solid rgba(136,165,183,0.3); padding:10px 22px; border-radius:6px; font-family:'Sen',sans-serif; font-size:14px; font-weight:500; cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  if (!localStorage.getItem('atlas_cookie_consent')) {
+    document.getElementById('cookie-consent').style.display = 'block';
+  }
+})();
+function acceptCookies() {
+  localStorage.setItem('atlas_cookie_consent', 'accepted');
+  document.getElementById('cookie-consent').style.display = 'none';
+}
+function declineCookies() {
+  localStorage.setItem('atlas_cookie_consent', 'declined');
+  document.getElementById('cookie-consent').style.display = 'none';
+  // Disable GA if declined
+  window['ga-disable-G-XXXXXXXXXX'] = true;
+}
+</script>
 </body>
 </html>
