@@ -144,6 +144,105 @@ function processHtmlFile(filePath, relPath) {
         }
     }
 
+    // JSON-LD Structured Data Schema Generation
+    let schemas = [];
+    
+    // 1. Organization Schema (Every page)
+    schemas.push({
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "Atlas Accountants",
+        "url": BASE_URL,
+        "logo": `${BASE_URL}/assets/logo.png`,
+        "email": "info@atlasaccountantsusa.com",
+        "telephone": "+1-919-438-0294",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Wake Forest",
+            "addressRegion": "NC",
+            "addressCountry": "US"
+        },
+        "description": "Virtual bookkeeping and accounting firm serving clients in all 50 states."
+    });
+
+    // 2. BreadcrumbList Schema (All pages except home)
+    if (slug !== '' && slug !== '404.html') {
+        let breadcrumbParts = slug.split('/');
+        let itemListElement = [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": BASE_URL
+        }];
+        let currentUrl = BASE_URL;
+        breadcrumbParts.forEach((part, index) => {
+            currentUrl += '/' + part;
+            itemListElement.push({
+                "@type": "ListItem",
+                "position": index + 2,
+                "name": part.charAt(0).toUpperCase() + part.slice(1).replace(/-/g, ' '),
+                "item": currentUrl
+            });
+        });
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": itemListElement
+        });
+    }
+
+    // 3. Service Schema
+    if (relPath.startsWith('services/') && relPath !== 'services/index.html') {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": meta.title.split(' | ')[0],
+            "description": meta.desc,
+            "provider": {
+                "@type": "AccountingService",
+                "name": "Atlas Accountants"
+            }
+        });
+    }
+
+    // 4. FAQPage Schema (Matches visible AEO block content)
+    const aeoH2 = $('.aeo-answer-block h2').text().trim();
+    const aeoP = $('.aeo-answer-block p').text().trim();
+    if (aeoH2 && aeoP) {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": aeoH2,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": aeoP
+                }
+            }]
+        });
+    }
+
+    // 5. Person Schema
+    if (relPath === 'about/index.html') {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Anoop Mishra",
+            "jobTitle": "Founder & Accountant",
+            "worksFor": {
+                "@type": "AccountingService",
+                "name": "Atlas Accountants"
+            }
+        });
+    }
+
+    // Remove old schema script if exists
+    $('script[type="application/ld+json"]').remove();
+    
+    // Inject new schema script
+    $('head').append(`<script type="application/ld+json">\n${JSON.stringify(schemas, null, 2)}\n</script>\n`);
+
     // GA4 & Event Tracking Injection
     const gaScript = `
     <!-- Google Analytics (GA4) -->
@@ -181,9 +280,6 @@ function processHtmlFile(filePath, relPath) {
     
     const final$ = cheerio.load(cleanHtml);
     final$('head').append(gaScript);
-
-    // Ensure all internal links have trailing slashes handled correctly or are clean
-    // The previous script already made them clean (e.g. href="/about"). We leave them as is.
 
     fs.writeFileSync(filePath, final$.html());
 }
@@ -263,4 +359,4 @@ fs.writeFileSync(path.join(__dirname, 'llms.txt'), llmsTxt);
 const indexNowKey = 'e9c3b8a4f2d14b6e8a9f0c7d5e2b3a1f'; // Random key
 fs.writeFileSync(path.join(__dirname, `${indexNowKey}.txt`), indexNowKey);
 
-console.log("SEO Build Complete!");
+console.log("SEO Build Complete with JSON-LD Schema Generation!");
