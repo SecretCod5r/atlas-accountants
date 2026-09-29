@@ -76,7 +76,7 @@ const pagesMetadata = {
     }
 };
 
-const GA4_ID = 'G-XXXXXXXXXX'; // Placeholder from BUSINESS_FACTS.md
+const GA4_ID = 'G-98XT9JEQ0X';
 
 function processHtmlFile(filePath, relPath) {
     let content = fs.readFileSync(filePath, 'utf-8');

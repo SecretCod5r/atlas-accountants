@@ -30,4 +30,4 @@ Virtual bookkeeping and accounting firm delivering CPA-ready bookkeeping and job
 - **Compliance Rules**: No tax return preparation or tax advice. Do not mention tax return language.
 
 ## Analytics & Measurement
-- **GA4 Measurement ID**: G-XXXXXXXXXX (Placeholder)
+- **GA4 Measurement ID**: G-98XT9JEQ0X
