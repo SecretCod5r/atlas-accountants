@@ -93,6 +93,34 @@ const pagesMetadata = {
     'resources/construction-business-busy-but-broke/index.html': {
         title: 'Why is My Construction Business Busy But Broke? | Atlas Accountants',
         desc: 'You have a pipeline full of work, but no money in the bank. Discover the top reasons construction businesses go broke while staying busy.',
+    },
+    'industries/specialty-trades/roofing/index.html': {
+        title: 'Bookkeeping for Roofing Contractors | Atlas Accountants',
+        desc: 'Specialized bookkeeping for roofing contractors. Track material costs, sub-contractor labor, and weather delays with accurate job costing.',
+    },
+    'industries/specialty-trades/hvac/index.html': {
+        title: 'Bookkeeping for HVAC Companies | Atlas Accountants',
+        desc: 'HVAC bookkeeping services for installation and service contractors. Track equipment costs, service maintenance agreements, and technician labor.',
+    },
+    'industries/specialty-trades/electricians/index.html': {
+        title: 'Bookkeeping for Electricians | Atlas Accountants',
+        desc: 'Bookkeeping for electrical contractors. Track copper wire costs, permit fees, and apprentice labor with precise job costing.',
+    },
+    'industries/specialty-trades/plumbers/index.html': {
+        title: 'Bookkeeping for Plumbers | Atlas Accountants',
+        desc: 'Bookkeeping for plumbing contractors. Accurately track fixtures, piping, service call revenue, and technician labor.',
+    },
+    'locations/wake-forest-nc/index.html': {
+        title: 'Bookkeeping Services in Wake Forest, NC | Atlas Accountants',
+        desc: 'Local bookkeeping and accounting services in Wake Forest, North Carolina. We help contractors and real estate investors get CPA-ready financials.',
+    },
+    'locations/north-carolina/index.html': {
+        title: 'Construction Bookkeeping in North Carolina | Atlas Accountants',
+        desc: 'Virtual bookkeeping services for contractors across North Carolina. Expert job costing, payroll, and CPA-ready financials.',
+    },
+    'resources/bookkeeper-vs-accountant-contractors/index.html': {
+        title: 'Bookkeeper vs. Accountant for Contractors | Atlas Accountants',
+        desc: 'What is the difference between a bookkeeper and a CPA for a construction business? Learn who to hire and when to maximize your profits and minimize taxes.',
     }
 };
 
@@ -208,7 +236,7 @@ function processHtmlFile(filePath, relPath) {
     }
 
     // 3. Service Schema
-    if (relPath.startsWith('services/') && relPath !== 'services/index.html') {
+    if ((relPath.startsWith('services/') || relPath.startsWith('industries/')) && relPath !== 'services/index.html' && relPath !== 'industries/index.html') {
         schemas.push({
             "@context": "https://schema.org",
             "@type": "Service",
