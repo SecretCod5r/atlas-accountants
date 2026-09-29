@@ -58,6 +58,10 @@ const pagesMetadata = {
         title: 'Construction Job Costing Services | Atlas Accountants',
         desc: 'Stop guessing if your projects are profitable. We provide construction job costing services and setup in QuickBooks for residential contractors.',
     },
+    'services/quickbooks-cleanup/index.html': {
+        title: 'QuickBooks Cleanup & Catch-Up Bookkeeping | Atlas Accountants',
+        desc: 'Behind on your books? Our QuickBooks cleanup and catch-up bookkeeping services for contractors will fix your messy ledger and get you tax-ready fast.',
+    },
     'services/law-firms/index.html': {
         title: 'Law Firm Bookkeeping Services | Atlas Accountants',
         desc: 'Specialized bookkeeping and trust accounting for law firms. Keep your IOLTA compliant and your financials CPA-ready.',
@@ -77,6 +81,18 @@ const pagesMetadata = {
     'services/small-business/index.html': {
         title: 'Small Business Bookkeeping | Atlas Accountants',
         desc: 'Monthly CPA-ready bookkeeping for small businesses. Clean, reconciled financials that hold up to scrutiny.',
+    },
+    'resources/index.html': {
+        title: 'Contractor Bookkeeping Resources | Atlas Accountants',
+        desc: 'Articles and guides on construction bookkeeping, job costing, chart of accounts, and true profitability for general contractors and specialty trades.',
+    },
+    'resources/chart-of-accounts-for-contractors/index.html': {
+        title: 'How to Set Up a Chart of Accounts for a Contractor | Atlas Accountants',
+        desc: 'Learn how to structure a Chart of Accounts for a construction business to track job costs, overhead, and true gross margin accurately.',
+    },
+    'resources/construction-business-busy-but-broke/index.html': {
+        title: 'Why is My Construction Business Busy But Broke? | Atlas Accountants',
+        desc: 'You have a pipeline full of work, but no money in the bank. Discover the top reasons construction businesses go broke while staying busy.',
     }
 };
 
@@ -223,7 +239,30 @@ function processHtmlFile(filePath, relPath) {
         });
     }
 
-    // 5. Person Schema
+    // 5. Article Schema
+    if (relPath.startsWith('resources/') && relPath !== 'resources/index.html') {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": meta.title.split(' | ')[0],
+            "description": meta.desc,
+            "author": {
+                "@type": "Person",
+                "name": "Anoop Mishra",
+                "url": `${BASE_URL}/about`
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Atlas Accountants",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": `${BASE_URL}/assets/logo.png`
+                }
+            }
+        });
+    }
+
+    // 6. Person Schema
     if (relPath === 'about/index.html') {
         schemas.push({
             "@context": "https://schema.org",
