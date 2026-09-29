@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-commerce analytics · Medallion · Dark</title>
+  <title>Atlas Accountants | Job-Costed Bookkeeping</title>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,41 +29,79 @@
     .path-title { fill: var(--ink); font: 600 11px var(--sans); }
     .path-sub { fill: var(--muted); font: 400 9px var(--mono); }
   </style>
-</head>
+<meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<link rel="canonical" href="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/example-medallion-dark.html">
+<meta property="og:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta property="og:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/example-medallion-dark.html">
+<meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta name="twitter:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head>
 <body>
   <main class="frame">
     <p class="eyebrow">Medallion · Diagram Design</p>
     <h1>Five-tier e-commerce analytics storage</h1>
 
     <svg viewBox="0 0 1040 548" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="medallion-dark-title medallion-dark-desc">
-      <title id="medallion-dark-title">Five-tier e-commerce analytics medallion</title>
+      <title id="medallion-dark-title">Atlas Accountants | Job-Costed Bookkeeping</title>
       <desc id="medallion-dark-desc">Clickstream events and order records move from raw storage through anonymized, staging, and aggregated tiers before lifecycle archiving.</desc>
       <defs>
-        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bfc0c0"/></marker>
-        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#f08a59"/></marker>
-        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6a95d8"/></marker>
-        <clipPath id="clip-raw"><rect x="16" y="80" width="172" height="380" rx="6"/></clipPath>
-        <clipPath id="clip-anon"><rect x="204" y="80" width="172" height="380" rx="6"/></clipPath>
-        <clipPath id="clip-stage"><rect x="392" y="80" width="172" height="380" rx="6"/></clipPath>
-        <clipPath id="clip-aggregate"><rect x="580" y="80" width="172" height="380" rx="6"/></clipPath>
-        <clipPath id="clip-archive"><rect x="768" y="80" width="172" height="380" rx="6"/></clipPath>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bfc0c0"></polygon></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#f08a59"></polygon></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6a95d8"></polygon></marker>
+        <clipPath id="clip-raw"><rect x="16" y="80" width="172" height="380" rx="6"></rect></clipPath>
+        <clipPath id="clip-anon"><rect x="204" y="80" width="172" height="380" rx="6"></rect></clipPath>
+        <clipPath id="clip-stage"><rect x="392" y="80" width="172" height="380" rx="6"></rect></clipPath>
+        <clipPath id="clip-aggregate"><rect x="580" y="80" width="172" height="380" rx="6"></rect></clipPath>
+        <clipPath id="clip-archive"><rect x="768" y="80" width="172" height="380" rx="6"></rect></clipPath>
       </defs>
-      <rect width="1040" height="548" fill="#2d3142"/>
+      <rect width="1040" height="548" fill="#2d3142"></rect>
 
       <!-- Promotion arcs are the medallion type's required connector grammar. -->
-      <path d="M102 80 C102 0 290 0 290 80" fill="none" stroke="#bfc0c0" stroke-width="1.4" marker-end="url(#arrow)"/>
-      <path d="M290 80 C290 0 478 0 478 80" fill="none" stroke="#bfc0c0" stroke-width="1.4" marker-end="url(#arrow)"/>
-      <path d="M478 80 C478 0 666 0 666 80" fill="none" stroke="#f08a59" stroke-width="1.6" marker-end="url(#arrow-accent)"/>
-      <path d="M666 80 C666 0 854 0 854 80" fill="none" stroke="#bfc0c0" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+      <path d="M102 80 C102 0 290 0 290 80" fill="none" stroke="#bfc0c0" stroke-width="1.4" marker-end="url(#arrow)"></path>
+      <path d="M290 80 C290 0 478 0 478 80" fill="none" stroke="#bfc0c0" stroke-width="1.4" marker-end="url(#arrow)"></path>
+      <path d="M478 80 C478 0 666 0 666 80" fill="none" stroke="#f08a59" stroke-width="1.6" marker-end="url(#arrow-accent)"></path>
+      <path d="M666 80 C666 0 854 0 854 80" fill="none" stroke="#bfc0c0" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"></path>
       <text x="196" y="50" class="arc-label" fill="#bfc0c0">MASK IDS</text>
       <text x="384" y="50" class="arc-label" fill="#bfc0c0">CLEAN + JOIN</text>
       <text x="572" y="50" class="arc-label" fill="#f08a59">AGGREGATE</text>
       <text x="760" y="50" class="arc-label" fill="#bfc0c0">LIFECYCLE</text>
 
       <!-- Raw -->
-      <rect x="16" y="80" width="172" height="380" rx="6" fill="rgba(245,245,245,0.04)"/>
-      <rect x="16" y="80" width="172" height="50" fill="rgba(142,152,172,0.16)" clip-path="url(#clip-raw)"/>
-      <rect x="16" y="80" width="172" height="380" rx="6" fill="none" stroke="#bfc0c0"/>
+      <rect x="16" y="80" width="172" height="380" rx="6" fill="rgba(245,245,245,0.04)"></rect>
+      <rect x="16" y="80" width="172" height="50" fill="rgba(142,152,172,0.16)" clip-path="url(#clip-raw)"></rect>
+      <rect x="16" y="80" width="172" height="380" rx="6" fill="none" stroke="#bfc0c0"></rect>
       <text x="102" y="106" class="tier-title">Raw</text>
       <text x="102" y="144" class="bucket">raw-commerce</text>
       <text x="32" y="180" class="field-label">Tool</text>
@@ -79,9 +115,9 @@
       <text x="32" y="388" class="example-value">order records</text>
 
       <!-- Anonymized -->
-      <rect x="204" y="80" width="172" height="380" rx="6" fill="rgba(245,245,245,0.04)"/>
-      <rect x="204" y="80" width="172" height="50" fill="rgba(245,245,245,0.08)" clip-path="url(#clip-anon)"/>
-      <rect x="204" y="80" width="172" height="380" rx="6" fill="none" stroke="rgba(245,245,245,0.30)"/>
+      <rect x="204" y="80" width="172" height="380" rx="6" fill="rgba(245,245,245,0.04)"></rect>
+      <rect x="204" y="80" width="172" height="50" fill="rgba(245,245,245,0.08)" clip-path="url(#clip-anon)"></rect>
+      <rect x="204" y="80" width="172" height="380" rx="6" fill="none" stroke="rgba(245,245,245,0.30)"></rect>
       <text x="290" y="106" class="tier-title">Anonymized</text>
       <text x="290" y="144" class="bucket">anon-commerce</text>
       <text x="220" y="180" class="field-label">Tool</text>
@@ -95,9 +131,9 @@
       <text x="220" y="388" class="example-value">masked customer IDs</text>
 
       <!-- Staging -->
-      <rect x="392" y="80" width="172" height="380" rx="6" fill="rgba(245,245,245,0.04)"/>
-      <rect x="392" y="80" width="172" height="50" fill="rgba(245,245,245,0.08)" clip-path="url(#clip-stage)"/>
-      <rect x="392" y="80" width="172" height="380" rx="6" fill="none" stroke="rgba(245,245,245,0.30)"/>
+      <rect x="392" y="80" width="172" height="380" rx="6" fill="rgba(245,245,245,0.04)"></rect>
+      <rect x="392" y="80" width="172" height="50" fill="rgba(245,245,245,0.08)" clip-path="url(#clip-stage)"></rect>
+      <rect x="392" y="80" width="172" height="380" rx="6" fill="none" stroke="rgba(245,245,245,0.30)"></rect>
       <text x="478" y="106" class="tier-title">Staging</text>
       <text x="478" y="144" class="bucket">staging-commerce</text>
       <text x="408" y="180" class="field-label">Tool</text>
@@ -111,9 +147,9 @@
       <text x="408" y="388" class="example-value">validated event rows</text>
 
       <!-- Aggregated focal tier -->
-      <rect x="580" y="80" width="172" height="380" rx="6" fill="rgba(240,138,89,0.12)"/>
-      <rect x="580" y="80" width="172" height="50" fill="rgba(240,138,89,0.20)" clip-path="url(#clip-aggregate)"/>
-      <rect x="580" y="80" width="172" height="380" rx="6" fill="none" stroke="#f08a59" stroke-width="1.6"/>
+      <rect x="580" y="80" width="172" height="380" rx="6" fill="rgba(240,138,89,0.12)"></rect>
+      <rect x="580" y="80" width="172" height="50" fill="rgba(240,138,89,0.20)" clip-path="url(#clip-aggregate)"></rect>
+      <rect x="580" y="80" width="172" height="380" rx="6" fill="none" stroke="#f08a59" stroke-width="1.6"></rect>
       <text x="666" y="106" class="tier-title">Aggregated</text>
       <text x="666" y="144" class="bucket focal-text">analytics-marts</text>
       <text x="596" y="180" class="field-label">Tool</text>
@@ -127,9 +163,9 @@
       <text x="596" y="388" class="example-value focal-text">revenue by channel</text>
 
       <!-- Archive -->
-      <rect x="768" y="80" width="172" height="380" rx="6" fill="rgba(245,245,245,0.06)"/>
-      <rect x="768" y="80" width="172" height="50" fill="rgba(142,152,172,0.24)" clip-path="url(#clip-archive)"/>
-      <rect x="768" y="80" width="172" height="380" rx="6" fill="none" stroke="#bfc0c0" stroke-dasharray="5,3"/>
+      <rect x="768" y="80" width="172" height="380" rx="6" fill="rgba(245,245,245,0.06)"></rect>
+      <rect x="768" y="80" width="172" height="50" fill="rgba(142,152,172,0.24)" clip-path="url(#clip-archive)"></rect>
+      <rect x="768" y="80" width="172" height="380" rx="6" fill="none" stroke="#bfc0c0" stroke-dasharray="5,3"></rect>
       <text x="854" y="106" class="tier-title">Archive</text>
       <text x="854" y="144" class="bucket">archive-commerce</text>
       <text x="784" y="180" class="field-label">Tool</text>
@@ -143,17 +179,18 @@
       <text x="784" y="388" class="example-value">closed order snapshots</text>
 
       <!-- Write-method paths -->
-      <rect x="16" y="476" width="460" height="56" rx="6" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.20)"/>
-      <rect x="24" y="482" width="64" height="12" rx="2" fill="none" stroke="rgba(245,245,245,0.30)" stroke-width="0.8"/>
+      <rect x="16" y="476" width="460" height="56" rx="6" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.20)"></rect>
+      <rect x="24" y="482" width="64" height="12" rx="2" fill="none" stroke="rgba(245,245,245,0.30)" stroke-width="0.8"></rect>
       <text x="56" y="491" class="path-tag" fill="#f5f5f5" font-size="7" text-anchor="middle">SQL PATH</text>
       <text x="96" y="506" class="path-title">Trino INSERT INTO … SELECT</text>
       <text x="96" y="522" class="path-sub">filter · join · aggregate — repeatable transforms</text>
-      <rect x="492" y="476" width="460" height="56" rx="6" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.20)"/>
-      <rect x="500" y="482" width="96" height="12" rx="2" fill="none" stroke="rgba(245,245,245,0.30)" stroke-width="0.8"/>
+      <rect x="492" y="476" width="460" height="56" rx="6" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.20)"></rect>
+      <rect x="500" y="482" width="96" height="12" rx="2" fill="none" stroke="rgba(245,245,245,0.30)" stroke-width="0.8"></rect>
       <text x="548" y="491" class="path-tag" fill="#f5f5f5" font-size="7" text-anchor="middle">NOTEBOOK PATH</text>
       <text x="604" y="506" class="path-title">Python notebooks on object storage</text>
       <text x="604" y="522" class="path-sub">explore · validate · model — interactive analysis</text>
     </svg>
   </main>
-</body>
-</html>
+
+
+</body></html>

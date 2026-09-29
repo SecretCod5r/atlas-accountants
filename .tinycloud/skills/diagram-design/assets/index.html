@@ -1,13 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diagram Design · Gallery</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Accountants | Job-Costed Bookkeeping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <style>
       *,
       *::before,
@@ -176,34 +171,59 @@
         }
       }
     </style>
-  </head>
+  <meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<link rel="canonical" href="https://atlasaccountantsusa.com/data/skills/diagram-design/assets">
+<meta property="og:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta property="og:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlasaccountantsusa.com/data/skills/diagram-design/assets">
+<meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta name="twitter:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head>
   <body>
     <header class="topbar">
       <div class="title-row">
         <h1>
           Diagram Design
-          <span
-            class="meta"
-            style="
+          <span class="meta" style="
               font-family: var(--mono);
               font-size: 0.66rem;
               margin-left: 0.5rem;
-            "
-            >· gallery</span
-          >
+            ">· gallery</span>
         </h1>
         <div style="display: flex; gap: 0.5rem">
-          <a class="open-raw" href="icons.html" target="_blank" rel="noopener"
-            >icon library ↗</a
-          >
-          <a
-            class="open-raw"
-            id="open-raw"
-            href="#"
-            target="_blank"
-            rel="noopener"
-            >open in new tab ↗</a
-          >
+          <a class="open-raw" href="icons.html" target="_blank" rel="noopener">icon library ↗</a>
+          <a class="open-raw" id="open-raw" href="#" target="_blank" rel="noopener">open in new tab ↗</a>
         </div>
       </div>
 
@@ -352,41 +372,36 @@
         <button class="tab new" data-type="sequence-oauth">
           <span class="eyebrow">45</span>Sequence · OAuth
         </button>
-        <button class="tab new" data-type="import-drawio" data-single>
+        <button class="tab new" data-type="import-drawio" data-single="">
           <span class="eyebrow">46</span>Import · draw.io
         </button>
-        <button class="tab new" data-type="import-mermaid" data-single>
+        <button class="tab new" data-type="import-mermaid" data-single="">
           <span class="eyebrow">47</span>Import · Mermaid
         </button>
-        <button class="tab new" data-type="quadrant-consultant" data-single>
+        <button class="tab new" data-type="quadrant-consultant" data-single="">
           <span class="eyebrow">48</span>Quadrant · consultant
         </button>
-        <button class="tab new" data-type="loop-terminal" data-single>
+        <button class="tab new" data-type="loop-terminal" data-single="">
           <span class="eyebrow">49</span>Loop · terminal
         </button>
-        <button class="tab new" data-type="policy-trace-animated" data-single>
+        <button class="tab new" data-type="policy-trace-animated" data-single="">
           <span class="eyebrow">50</span>Policy trace · animated
         </button>
-        <button class="tab new" data-type="queue-animated" data-single>
+        <button class="tab new" data-type="queue-animated" data-single="">
           <span class="eyebrow">51</span>Fan-in queue · animated
         </button>
-        <button class="tab new" data-type="paved-road-animated" data-single>
+        <button class="tab new" data-type="paved-road-animated" data-single="">
           <span class="eyebrow">52</span>Secure paved road · animated
         </button>
         <button class="tab new" data-type="tree-block-decomposition">
           <span class="eyebrow">53</span>Tree · block decomposition
         </button>
-        <button class="tab new" data-type="import-excalidraw" data-single>
+        <button class="tab new" data-type="import-excalidraw" data-single="">
           <span class="eyebrow">55</span>Import · Excalidraw
         </button>
       </div>
 
-      <div
-        class="tabs variants"
-        id="variant-tabs"
-        role="radiogroup"
-        aria-label="Variant"
-      >
+      <div class="tabs variants" id="variant-tabs" role="radiogroup" aria-label="Variant">
         <button class="tab active" data-variant="">Minimal light</button>
         <button class="tab" data-variant="-dark">Minimal dark</button>
         <button class="tab" data-variant="-full">Full editorial</button>
@@ -394,11 +409,7 @@
     </header>
 
     <main>
-      <iframe
-        id="preview"
-        src="example-architecture.html"
-        title="Preview"
-      ></iframe>
+      <iframe id="preview" src="example-architecture.html" title="Preview"></iframe>
     </main>
 
     <script>
@@ -481,5 +492,6 @@
       bindTabs("variant-tabs", "variant");
       update();
     </script>
-  </body>
-</html>
+  
+
+</body></html>

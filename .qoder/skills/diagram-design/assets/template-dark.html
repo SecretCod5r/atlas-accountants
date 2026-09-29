@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagram</title>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400&display=swap" rel="stylesheet">
+  <title>Atlas Accountants | Job-Costed Bookkeeping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -52,7 +50,45 @@
 
     svg { width: 100%; min-width: 900px; display: block; }
   </style>
-</head>
+<meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<link rel="canonical" href="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/template-dark.html">
+<meta property="og:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta property="og:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/template-dark.html">
+<meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta name="twitter:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head>
 <body>
   <div class="frame">
     <p class="eyebrow">[Type] · Diagram Design</p>
@@ -60,12 +96,12 @@
 
     <!-- Replace [diagram-slug] with a unique slug for this diagram before export. -->
     <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="[diagram-slug]-title [diagram-slug]-desc">
-      <title id="[diagram-slug]-title">[Diagram title]</title>
+      <title id="[diagram-slug]-title">Atlas Accountants | Job-Costed Bookkeeping</title>
       <desc id="[diagram-slug]-desc">[One sentence describing what the diagram shows]</desc>
       <defs>
-        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bfc0c0"/></marker>
-        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#f08a59"/></marker>
-        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6a95d8"/></marker>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bfc0c0"></polygon></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#f08a59"></polygon></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6a95d8"></polygon></marker>
 
         <!-- OPTIONAL: dot-pattern background. Uncomment and add <rect fill="url(#dots)"/> after the paper rect to enable. -->
         <!--
@@ -75,11 +111,12 @@
         -->
       </defs>
 
-      <rect width="100%" height="100%" fill="#2d3142"/>
+      <rect width="100%" height="100%" fill="#2d3142"></rect>
 
       <!-- Draw arrows first, then nodes. Replace with your content. -->
 
     </svg>
   </div>
-</body>
-</html>
+
+
+</body></html>

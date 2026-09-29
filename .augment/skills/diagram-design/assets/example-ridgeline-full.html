@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Request latency by service · Ridgeline</title>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Atlas Accountants | Job-Costed Bookkeeping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --color-paper:#f5f5f5; --color-paper-2:#ececec; --color-ink:#2d3142; --color-muted:#4f5d75; --color-soft:#7a8399; --color-rule:rgba(45,49,66,0.12); --color-accent:#eb6c36; --font-sans:'Geist',system-ui,sans-serif; --font-serif:'Instrument Serif',serif; --font-mono:'Geist Mono',ui-monospace,monospace; }
@@ -29,7 +27,45 @@
     .card p { color: var(--color-muted); font-size: 0.8125rem; line-height: 1.55; }
     .footer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(45,49,66,0.10); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--color-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
   </style>
-</head>
+<meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<link rel="canonical" href="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/example-ridgeline-full.html">
+<meta property="og:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta property="og:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/example-ridgeline-full.html">
+<meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta name="twitter:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head>
 <body>
   <div class="container">
     <div class="header">
@@ -39,16 +75,16 @@
     </div>
     <div class="diagram-container">
       <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ridgeline-full-title ridgeline-full-desc">
-        <title id="ridgeline-full-title">Checkout is slow in two different ways</title>
+        <title id="ridgeline-full-title">Atlas Accountants | Job-Costed Bookkeeping</title>
         <desc id="ridgeline-full-desc">Ridgeline chart of request-latency distributions for five services over one week; each ridge is the share of that service's requests falling in 40-millisecond bins, drawn on one shared amplitude scale, and checkout-api carries a second peak past 300 milliseconds that none of the other four show.</desc>
         <defs>
           <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="0.9" fill="rgba(45,49,66,0.10)"/>
+            <circle cx="1" cy="1" r="0.9" fill="rgba(45,49,66,0.10)"></circle>
           </pattern>
         </defs>
 
-        <rect width="100%" height="100%" fill="#f5f5f5"/>
-        <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"/>
+        <rect width="100%" height="100%" fill="#f5f5f5"></rect>
+        <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"></rect>
 
         <!-- ONE amplitude on every ridge: y = baseline - 2.4 x (share in %). Per-ridge
              normalisation would let a rare, flat distribution wear the same silhouette
@@ -59,32 +95,32 @@
 
         <!-- One baseline per ridge, 56px pitch. The baseline is where a bin of zero
              requests sits, so it can never be moved to give a ridge more room. -->
-        <line data-ridge="static-cdn" data-role="baseline" x1="320" y1="152" x2="680" y2="152" stroke="rgba(45,49,66,0.25)" stroke-width="1"/>
-        <line data-ridge="auth-api" data-role="baseline" x1="320" y1="208" x2="680" y2="208" stroke="rgba(45,49,66,0.25)" stroke-width="1"/>
-        <line data-ridge="search-api" data-role="baseline" x1="320" y1="264" x2="680" y2="264" stroke="rgba(45,49,66,0.25)" stroke-width="1"/>
-        <line data-ridge="checkout-api" data-role="baseline" x1="320" y1="320" x2="680" y2="320" stroke="rgba(45,49,66,0.25)" stroke-width="1"/>
-        <line data-ridge="report-export" data-role="baseline" x1="320" y1="376" x2="680" y2="376" stroke="rgba(45,49,66,0.25)" stroke-width="1"/>
+        <line data-ridge="static-cdn" data-role="baseline" x1="320" y1="152" x2="680" y2="152" stroke="rgba(45,49,66,0.25)" stroke-width="1"></line>
+        <line data-ridge="auth-api" data-role="baseline" x1="320" y1="208" x2="680" y2="208" stroke="rgba(45,49,66,0.25)" stroke-width="1"></line>
+        <line data-ridge="search-api" data-role="baseline" x1="320" y1="264" x2="680" y2="264" stroke="rgba(45,49,66,0.25)" stroke-width="1"></line>
+        <line data-ridge="checkout-api" data-role="baseline" x1="320" y1="320" x2="680" y2="320" stroke="rgba(45,49,66,0.25)" stroke-width="1"></line>
+        <line data-ridge="report-export" data-role="baseline" x1="320" y1="376" x2="680" y2="376" stroke="rgba(45,49,66,0.25)" stroke-width="1"></line>
 
         <!-- Shared x-scale: every ridge is sampled at the same 13 bins, 40ms wide,
              labelled at the lower edge. Straight segments between bins - no smoothing,
              because a spline through 13 bins invents extrema the sample never had. -->
-        <path data-ridge="static-cdn" data-baseline="152" data-bins="0,26,34,21,11,5,2,1,0,0,0,0,0" d="M320,152 L350,89.6 L380,70.4 L410,101.6 L440,125.6 L470,140 L500,147.2 L530,149.6 L560,152 L590,152 L620,152 L650,152 L680,152 Z" fill="rgba(45,49,66,0.12)" stroke="rgba(45,49,66,0.80)" stroke-width="1.2" stroke-linejoin="round"/>
+        <path data-ridge="static-cdn" data-baseline="152" data-bins="0,26,34,21,11,5,2,1,0,0,0,0,0" d="M320,152 L350,89.6 L380,70.4 L410,101.6 L440,125.6 L470,140 L500,147.2 L530,149.6 L560,152 L590,152 L620,152 L650,152 L680,152 Z" fill="rgba(45,49,66,0.12)" stroke="rgba(45,49,66,0.80)" stroke-width="1.2" stroke-linejoin="round"></path>
         <text data-ridge="static-cdn" data-role="name" x="304" y="155.5" fill="#2d3142" font-size="11" font-weight="500" font-family="'Geist', sans-serif" text-anchor="end">static-cdn</text>
         <text data-ridge="static-cdn" data-role="range" x="696" y="155.5" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">40–280 ms</text>
-        <path data-ridge="auth-api" data-baseline="208" data-bins="0,6,28,36,18,7,3,1,1,0,0,0,0" d="M320,208 L350,193.6 L380,140.8 L410,121.6 L440,164.8 L470,191.2 L500,200.8 L530,205.6 L560,205.6 L590,208 L620,208 L650,208 L680,208 Z" fill="rgba(45,49,66,0.12)" stroke="rgba(45,49,66,0.74)" stroke-width="1.2" stroke-linejoin="round"/>
+        <path data-ridge="auth-api" data-baseline="208" data-bins="0,6,28,36,18,7,3,1,1,0,0,0,0" d="M320,208 L350,193.6 L380,140.8 L410,121.6 L440,164.8 L470,191.2 L500,200.8 L530,205.6 L560,205.6 L590,208 L620,208 L650,208 L680,208 Z" fill="rgba(45,49,66,0.12)" stroke="rgba(45,49,66,0.74)" stroke-width="1.2" stroke-linejoin="round"></path>
         <text data-ridge="auth-api" data-role="name" x="304" y="211.5" fill="#2d3142" font-size="11" font-weight="500" font-family="'Geist', sans-serif" text-anchor="end">auth-api</text>
         <text data-ridge="auth-api" data-role="range" x="696" y="211.5" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">40–320 ms</text>
-        <path data-ridge="search-api" data-baseline="264" data-bins="0,1,9,22,27,19,11,6,3,1,1,0,0" d="M320,264 L350,261.6 L380,242.4 L410,211.2 L440,199.2 L470,218.4 L500,237.6 L530,249.6 L560,256.8 L590,261.6 L620,261.6 L650,264 L680,264 Z" fill="rgba(45,49,66,0.12)" stroke="rgba(45,49,66,0.68)" stroke-width="1.2" stroke-linejoin="round"/>
+        <path data-ridge="search-api" data-baseline="264" data-bins="0,1,9,22,27,19,11,6,3,1,1,0,0" d="M320,264 L350,261.6 L380,242.4 L410,211.2 L440,199.2 L470,218.4 L500,237.6 L530,249.6 L560,256.8 L590,261.6 L620,261.6 L650,264 L680,264 Z" fill="rgba(45,49,66,0.12)" stroke="rgba(45,49,66,0.68)" stroke-width="1.2" stroke-linejoin="round"></path>
         <text data-ridge="search-api" data-role="name" x="304" y="267.5" fill="#2d3142" font-size="11" font-weight="500" font-family="'Geist', sans-serif" text-anchor="end">search-api</text>
         <text data-ridge="search-api" data-role="range" x="696" y="267.5" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">40–400 ms</text>
 
         <!-- checkout-api FOCAL - and it is the ridge whose SHAPE is the story,
              not the slowest service. Drawn last so its second peak reads over the
              ridge below it rather than under. -->
-        <path data-ridge="checkout-api" data-baseline="320" data-bins="0,1,6,17,21,14,8,6,7,9,7,4,0" d="M320,320 L350,317.6 L380,305.6 L410,279.2 L440,269.6 L470,286.4 L500,300.8 L530,305.6 L560,303.2 L590,298.4 L620,303.2 L650,310.4 L680,320 Z" fill="rgba(235,108,54,0.16)" stroke="#eb6c36" stroke-width="2.4" stroke-linejoin="round"/>
+        <path data-ridge="checkout-api" data-baseline="320" data-bins="0,1,6,17,21,14,8,6,7,9,7,4,0" d="M320,320 L350,317.6 L380,305.6 L410,279.2 L440,269.6 L470,286.4 L500,300.8 L530,305.6 L560,303.2 L590,298.4 L620,303.2 L650,310.4 L680,320 Z" fill="rgba(235,108,54,0.16)" stroke="#eb6c36" stroke-width="2.4" stroke-linejoin="round"></path>
         <text data-ridge="checkout-api" data-role="name" x="304" y="323.5" fill="#2d3142" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="end">checkout-api</text>
         <text data-ridge="checkout-api" data-role="range" x="696" y="323.5" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">40–440 ms</text>
-        <path data-ridge="report-export" data-baseline="376" data-bins="0,0,1,3,7,12,17,19,16,12,9,4,0" d="M320,376 L350,376 L380,373.6 L410,368.8 L440,359.2 L470,347.2 L500,335.2 L530,330.4 L560,337.6 L590,347.2 L620,354.4 L650,366.4 L680,376 Z" fill="rgba(45,49,66,0.12)" stroke="rgba(45,49,66,0.62)" stroke-width="1.2" stroke-linejoin="round"/>
+        <path data-ridge="report-export" data-baseline="376" data-bins="0,0,1,3,7,12,17,19,16,12,9,4,0" d="M320,376 L350,376 L380,373.6 L410,368.8 L440,359.2 L470,347.2 L500,335.2 L530,330.4 L560,337.6 L590,347.2 L620,354.4 L650,366.4 L680,376 Z" fill="rgba(45,49,66,0.12)" stroke="rgba(45,49,66,0.62)" stroke-width="1.2" stroke-linejoin="round"></path>
         <text data-ridge="report-export" data-role="name" x="304" y="379.5" fill="#2d3142" font-size="11" font-weight="500" font-family="'Geist', sans-serif" text-anchor="end">report-export</text>
         <text data-ridge="report-export" data-role="range" x="696" y="379.5" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace">80–440 ms</text>
 
@@ -98,15 +134,15 @@
         <text x="500" y="424" fill="#4f5d75" font-size="7" font-family="'Geist Mono', monospace" letter-spacing="0.18em" text-anchor="middle">REQUEST LATENCY (MS), BIN LOWER EDGE</text>
 
         <!-- Legend -->
-        <line x1="40" y1="462" x2="960" y2="462" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+        <line x1="40" y1="462" x2="960" y2="462" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"></line>
         <text x="40" y="478" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em">LEGEND</text>
         <text x="960" y="478" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.06em" text-anchor="end">SHARE OF EACH SERVICE'S OWN REQUESTS PER 40 MS BIN · 1% = 2.4PX ON EVERY RIDGE · UNSMOOTHED · ILLUSTRATIVE FIGURES</text>
 
-        <rect x="40" y="486" width="24" height="10" fill="rgba(235,108,54,0.16)"/>
-        <line x1="40" y1="486" x2="64" y2="486" stroke="#eb6c36" stroke-width="2.4"/>
+        <rect x="40" y="486" width="24" height="10" fill="rgba(235,108,54,0.16)"></rect>
+        <line x1="40" y1="486" x2="64" y2="486" stroke="#eb6c36" stroke-width="2.4"></line>
         <text x="72" y="496" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">checkout-api · focal, second peak past 300 ms</text>
-        <rect x="360" y="486" width="24" height="10" fill="rgba(45,49,66,0.12)"/>
-        <line x1="360" y1="486" x2="384" y2="486" stroke="rgba(45,49,66,0.80)" stroke-width="1.2"/>
+        <rect x="360" y="486" width="24" height="10" fill="rgba(45,49,66,0.12)"></rect>
+        <line x1="360" y1="486" x2="384" y2="486" stroke="rgba(45,49,66,0.80)" stroke-width="1.2"></line>
         <text x="392" y="496" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">Other services · strongest tone is the fastest median</text>
       </svg>
     </div>
@@ -130,5 +166,6 @@
       <span>example · diagram design</span>
     </div>
   </div>
-</body>
-</html>
+
+
+</body></html>

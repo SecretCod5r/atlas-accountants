@@ -1,12 +1,42 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head><meta name="twitter:title" content="About Atlas Accountants | Expert Construction Bookkeepers">
+<meta name="twitter:description" content="Learn about Atlas Accountants. Built by someone who ran job sites before reading a P&amp;L, we deliver CPA-ready financials for contractors nationwide.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head><body>﻿
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | Atlas Accountants</title>
-<meta name="description" content="Atlas Accountants was built by a contractor, for contractors. Learn how 10 years of construction experience became the foundation for job-costed bookkeeping.">
-<meta property="og:title" content="About | Atlas Accountants">
-<meta property="og:description" content="Atlas Accountants was built by a contractor, for contractors. 10 years of construction experience became the foundation for job-costed bookkeeping.">
+<title>About Atlas Accountants | Expert Construction Bookkeepers</title>
+<meta name="description" content="Learn about Atlas Accountants. Built by someone who ran job sites before reading a P&amp;L, we deliver CPA-ready financials for contractors nationwide.">
+<meta property="og:title" content="About Atlas Accountants | Expert Construction Bookkeepers">
+<meta property="og:description" content="Learn about Atlas Accountants. Built by someone who ran job sites before reading a P&amp;L, we deliver CPA-ready financials for contractors nationwide.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atlasaccountantsusa.com/about">
 <meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
@@ -14,8 +44,8 @@
 <link rel="canonical" href="https://atlasaccountantsusa.com/about">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Sen:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
   .about-hero {
@@ -86,15 +116,10 @@
 </style>
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
-</script>
-</head>
-<body>
+
+
+
+
 
 <div class="wrap"><nav>
   <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
@@ -128,7 +153,7 @@
         <img src="/assets/Badge_QuickBooks_ProAdvisor_Level2.png" alt="Intuit QuickBooks ProAdvisor Level 2 Certified">
       </div>
       <div>
-        <div style="font-weight: 700; color: var(--navy); font-size: 15.5px;">Intuit Bookkeeping Certified &middot; Intuit QuickBooks ProAdvisor, Level 2</div>
+        <div style="font-weight: 700; color: var(--navy); font-size: 15.5px;">Intuit Bookkeeping Certified · Intuit QuickBooks ProAdvisor, Level 2</div>
         <div style="font-size: 13.5px; color: var(--charcoal); opacity: 0.8;">Expertise you can trust.</div>
       </div>
     </div>
@@ -177,8 +202,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Atlas Accountants. All rights reserved.</span>
-      <span><a href="/privacy-policy" style="color: inherit; text-decoration: none; opacity: 0.8;">Privacy Policy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: none; opacity: 0.8;">Terms</a> &middot; Wake Forest, North Carolina</span>
+      <span>© 2026 Atlas Accountants. All rights reserved.</span>
+      <span><a href="/privacy-policy" style="color: inherit; text-decoration: none; opacity: 0.8;">Privacy Policy</a> · <a href="/terms" style="color: inherit; text-decoration: none; opacity: 0.8;">Terms</a> · Wake Forest, North Carolina</span>
     </div>
   </div>
 </footer>
@@ -251,5 +276,6 @@ function declineCookies() {
   document.getElementById('cookie-consent').style.display = 'none';
   window['ga-disable-G-XXXXXXXXXX'] = true;
 }
-</script></body>
-</html>
+</script>
+
+</body></html>

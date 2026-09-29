@@ -1,13 +1,50 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head><link rel="canonical" href="https://atlasaccountantsusa.com/404.html">
+<meta property="og:title" content="Page Not Found | Atlas Accountants">
+<meta property="og:description" content="The page you are looking for does not exist. Return to Atlas Accountants homepage.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlasaccountantsusa.com/404.html">
+<meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page Not Found | Atlas Accountants">
+<meta name="twitter:description" content="The page you are looking for does not exist. Return to Atlas Accountants homepage.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head><body>﻿
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found | Atlas Accountants</title>
-<meta name="description" content="The page you're looking for doesn't exist. Head back to Atlas Accountants homepage or explore our services.">
+<meta name="description" content="The page you are looking for does not exist. Return to Atlas Accountants homepage.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Sen:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <style>
@@ -71,8 +108,8 @@
     .error-content h1 { font-size: 28px; }
   }
 </style>
-</head>
-<body>
+
+
 
 <div class="wrap"><nav>
   <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
@@ -95,13 +132,13 @@
     <div class="error-links">
       <a href="/"><button class="btn-primary">Back to Homepage</button></a>
       <a href="/services">Explore Our Services
-        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
       <a href="/financial-health-review">Get a Free Financial Health Review
-        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
       <a href="/margin-line">Take The Margin Line Check
-        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
     </div>
   </div>
@@ -109,5 +146,6 @@
 
 <script src="/atlas-interactions.js"></script>
 <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
-</body>
-</html>
+
+
+</body></html>

@@ -1,12 +1,42 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head><meta name="twitter:title" content="Free Financial Health Review | Atlas Accountants">
+<meta name="twitter:description" content="Get a free financial health review for your contracting or real estate business. Discover where your true margins are with our expert assessment.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head><body>﻿
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Financial Health Review | Atlas Accountants</title>
-<meta name="description" content="Get a free financial health review for your contracting business. Discover which jobs are making money and get a custom action plan in 30 minutes.">
+<meta name="description" content="Get a free financial health review for your contracting or real estate business. Discover where your true margins are with our expert assessment.">
 <meta property="og:title" content="Free Financial Health Review | Atlas Accountants">
-<meta property="og:description" content="Discover which jobs are making money. Get a custom action plan in 30 minutes.">
+<meta property="og:description" content="Get a free financial health review for your contracting or real estate business. Discover where your true margins are with our expert assessment.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atlasaccountantsusa.com/financial-health-review">
 <meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
@@ -14,8 +44,8 @@
 <link rel="canonical" href="https://atlasaccountantsusa.com/financial-health-review">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Sen:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
   .fhr-hero {
@@ -256,15 +286,10 @@
 </style>
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
-</script>
-</head>
-<body>
+
+
+
+
 
 <div class="wrap"><nav>
   <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
@@ -306,15 +331,15 @@
       <h3>Request Your Review</h3>
       <div class="form-group">
         <label>Name</label>
-        <input type="text" id="fhr-name" placeholder="Your Name" required>
+        <input type="text" id="fhr-name" placeholder="Your Name" required="">
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input type="email" id="fhr-email" placeholder="you@company.com" required>
+        <input type="email" id="fhr-email" placeholder="you@company.com" required="">
       </div>
       <div class="form-group">
         <label>Company</label>
-        <input type="text" id="fhr-company" placeholder="Company Name" required>
+        <input type="text" id="fhr-company" placeholder="Company Name" required="">
       </div>
       <div class="form-group">
         <label>What's the core issue?</label>
@@ -354,8 +379,8 @@
       <p>We've received your details. We will review your submission and reach out within 24 hours to schedule your Financial Health Review.</p>
       <div style="background: rgba(22,35,59,0.05); padding: 20px; border-radius: 8px; text-align: left; margin-top: 20px;">
         <p style="margin-bottom: 10px; font-weight: 700; font-size: 14px;">While you wait:</p>
-        <a href="/services" style="color: var(--orange); font-weight: 600; text-decoration: none; font-size: 14px; display: block; margin-bottom: 8px;">Explore our services &rarr;</a>
-        <a href="/margin-line" style="color: var(--orange); font-weight: 600; text-decoration: none; font-size: 14px; display: block;">Check your Margin Line score &rarr;</a>
+        <a href="/services" style="color: var(--orange); font-weight: 600; text-decoration: none; font-size: 14px; display: block; margin-bottom: 8px;">Explore our services →</a>
+        <a href="/margin-line" style="color: var(--orange); font-weight: 600; text-decoration: none; font-size: 14px; display: block;">Check your Margin Line score →</a>
       </div>
     </div>
   </div>
@@ -395,19 +420,19 @@
       <div class="fit-col for">
         <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Who it's for</h4>
         <ul>
-          <li>&bull; Residential GCs &amp; Remodelers</li>
-          <li>&bull; Specialty Trade Subcontractors</li>
-          <li>&bull; Real Estate Investors ($500K+ annual)</li>
-          <li>&bull; Builders wanting real job-costing</li>
+          <li>• Residential GCs &amp; Remodelers</li>
+          <li>• Specialty Trade Subcontractors</li>
+          <li>• Real Estate Investors ($500K+ annual)</li>
+          <li>• Builders wanting real job-costing</li>
         </ul>
       </div>
       <div class="fit-col not-for">
         <h4><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> Who it's NOT for</h4>
         <ul>
-          <li>&bull; Businesses looking for Tax Preparation</li>
-          <li>&bull; Businesses needing Tax Planning advice</li>
-          <li>&bull; Non-construction general retail</li>
-          <li>&bull; DIYers who just want software support</li>
+          
+          
+          <li>• Non-construction general retail</li>
+          <li>• DIYers who just want software support</li>
         </ul>
       </div>
     </div>
@@ -483,8 +508,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Atlas Accountants. All rights reserved.</span>
-      <span><a href="/privacy-policy" style="color: inherit; text-decoration: none; opacity: 0.8;">Privacy Policy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: none; opacity: 0.8;">Terms</a> &middot; Wake Forest, North Carolina</span>
+      <span>© 2026 Atlas Accountants. All rights reserved.</span>
+      <span><a href="/privacy-policy" style="color: inherit; text-decoration: none; opacity: 0.8;">Privacy Policy</a> · <a href="/terms" style="color: inherit; text-decoration: none; opacity: 0.8;">Terms</a> · Wake Forest, North Carolina</span>
     </div>
   </div>
 </footer>
@@ -540,7 +565,7 @@
       monthly_revenue: revenue,
       backlog_status: backlog,
       _subject: 'New Financial Health Review Request from ' + name,
-      _cc: 'zensick.agency@gmail.com',
+      _cc: '',
       _replyto: email
     };
 
@@ -564,7 +589,7 @@
           'Monthly Revenue: ' + revenue + '\n' +
           'Backlog Status: ' + backlog
         );
-        window.location.href = 'mailto:info@atlasaccountantsusa.com,zensick.agency@gmail.com?subject=' + subject + '&body=' + body;
+        window.location.href = 'mailto:info@atlasaccountantsusa.com?subject=' + subject + '&body=' + body;
         document.getElementById('fhr-form-wrap').style.display = 'none';
         document.getElementById('ty-state').style.display = 'block';
         setTimeout(function() {
@@ -582,7 +607,7 @@
         'Monthly Revenue: ' + revenue + '\n' +
         'Backlog Status: ' + backlog
       );
-      window.location.href = 'mailto:info@atlasaccountantsusa.com,zensick.agency@gmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:info@atlasaccountantsusa.com?subject=' + subject + '&body=' + body;
       document.getElementById('fhr-form-wrap').style.display = 'none';
       document.getElementById('ty-state').style.display = 'block';
       setTimeout(function() {
@@ -655,5 +680,6 @@ function declineCookies() {
   window['ga-disable-G-XXXXXXXXXX'] = true;
 }
 </script>
-</body>
-</html>
+
+
+</body></html>

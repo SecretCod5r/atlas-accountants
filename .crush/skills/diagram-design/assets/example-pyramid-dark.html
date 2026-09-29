@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Content pyramid · what compounds</title>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Atlas Accountants | Job-Costed Bookkeeping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -52,49 +50,87 @@
 
     svg { width: 100%; min-width: 900px; display: block; }
   </style>
-</head>
+<meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<link rel="canonical" href="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/example-pyramid-dark.html">
+<meta property="og:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta property="og:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/example-pyramid-dark.html">
+<meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta name="twitter:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head>
 <body>
   <div class="frame">
     <p class="eyebrow">Pyramid · Diagram Design</p>
     <h1>Content pyramid · what compounds</h1>
 
     <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pyramid-dark-title pyramid-dark-desc">
-      <title id="pyramid-dark-title">Content pyramid · what compounds</title>
+      <title id="pyramid-dark-title">Atlas Accountants | Job-Costed Bookkeeping</title>
       <desc id="pyramid-dark-desc">Content pyramid showing short posts, essays, long-form guides, and a flagship book ordered by shipping cadence and leverage.</desc>
         <defs>
           <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="0.9" fill="rgba(245,245,245,0.10)"/>
+            <circle cx="1" cy="1" r="0.9" fill="rgba(245,245,245,0.10)"></circle>
           </pattern>
         </defs>
 
-        <rect width="100%" height="100%" fill="#2d3142"/>
-        <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"/>
+        <rect width="100%" height="100%" fill="#2d3142"></rect>
+        <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"></rect>
 
         <!-- Left axis: direction of rarity -->
-        <line x1="100" y1="40" x2="100" y2="320" stroke="rgba(245,245,245,0.30)" stroke-width="1"/>
-        <polygon points="96,40 104,40 100,28" fill="rgba(245,245,245,0.45)"/>
+        <line x1="100" y1="40" x2="100" y2="320" stroke="rgba(245,245,245,0.30)" stroke-width="1"></line>
+        <polygon points="96,40 104,40 100,28" fill="rgba(245,245,245,0.45)"></polygon>
         <text x="80" y="216" fill="#bfc0c0" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em" text-anchor="middle" transform="rotate(-90 80 216)">RARER · FEWER · COMPOUNDS ↑</text>
 
         <!-- Base layer: Short posts -->
-        <polygon points="244,280 756,280 820,344 180,344" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.12)" stroke-width="1"/>
+        <polygon points="244,280 756,280 820,344 180,344" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.12)" stroke-width="1"></polygon>
         <text x="500" y="308" fill="#f5f5f5" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Short posts</text>
         <text x="500" y="324" fill="#bfc0c0" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">daily · ~200 words</text>
         <text x="836" y="316" fill="#bfc0c0" font-size="9" font-family="'Geist Mono', monospace" letter-spacing="0.08em">~240/yr</text>
 
         <!-- L3: Essays -->
-        <polygon points="308,216 692,216 756,280 244,280" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.12)" stroke-width="1"/>
+        <polygon points="308,216 692,216 756,280 244,280" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.12)" stroke-width="1"></polygon>
         <text x="500" y="244" fill="#f5f5f5" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Essays</text>
         <text x="500" y="260" fill="#bfc0c0" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">weekly · 800–1,500 words</text>
         <text x="776" y="252" fill="#bfc0c0" font-size="9" font-family="'Geist Mono', monospace" letter-spacing="0.08em">~48/yr</text>
 
         <!-- L2: Long-form guides -->
-        <polygon points="372,152 628,152 692,216 308,216" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.12)" stroke-width="1"/>
+        <polygon points="372,152 628,152 692,216 308,216" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.12)" stroke-width="1"></polygon>
         <text x="500" y="180" fill="#f5f5f5" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Long-form guides</text>
         <text x="500" y="196" fill="#bfc0c0" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">quarterly · 4,000+ words</text>
         <text x="716" y="188" fill="#bfc0c0" font-size="9" font-family="'Geist Mono', monospace" letter-spacing="0.08em">~4/yr</text>
 
         <!-- Apex: Flagship book — CORAL FOCAL (true pyramid peak — single triangle, consistent slope with layers below) -->
-        <polygon points="500,24 628,152 372,152" fill="rgba(240,138,89,0.10)" stroke="#f08a59" stroke-width="1"/>
+        <polygon points="500,24 628,152 372,152" fill="rgba(240,138,89,0.10)" stroke="#f08a59" stroke-width="1"></polygon>
         <text x="500" y="120" fill="#f5f5f5" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Flagship book</text>
         <text x="500" y="136" fill="#bfc0c0" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">every 3–5 years</text>
         <text x="656" y="112" fill="#f08a59" font-size="9" font-family="'Geist Mono', monospace" letter-spacing="0.08em">the apex</text>
@@ -103,17 +139,18 @@
         <text x="500" y="384" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif" text-anchor="middle" font-style="italic">The base funds the apex. The apex defines the base.</text>
 
         <!-- Legend -->
-        <line x1="40" y1="436" x2="960" y2="436" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"/>
+        <line x1="40" y1="436" x2="960" y2="436" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"></line>
         <text x="40" y="452" fill="#bfc0c0" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em">LEGEND</text>
 
-        <rect x="40" y="464" width="16" height="12" fill="rgba(240,138,89,0.10)" stroke="#f08a59" stroke-width="1"/>
+        <rect x="40" y="464" width="16" height="12" fill="rgba(240,138,89,0.10)" stroke="#f08a59" stroke-width="1"></rect>
         <text x="64" y="474" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif">Apex — rarest, highest leverage</text>
 
-        <rect x="280" y="464" width="16" height="12" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.25)" stroke-width="1"/>
+        <rect x="280" y="464" width="16" height="12" fill="rgba(245,245,245,0.04)" stroke="rgba(245,245,245,0.25)" stroke-width="1"></rect>
         <text x="304" y="474" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif">Supporting layer — the volume work</text>
 
         <text x="560" y="474" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif" font-style="italic">Layer width is honest: narrower = rarer shipping cadence.</text>
       </svg>
   </div>
-</body>
-</html>
+
+
+</body></html>

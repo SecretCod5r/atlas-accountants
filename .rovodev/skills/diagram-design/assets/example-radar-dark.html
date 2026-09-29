@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Storage backends · Capability radar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Atlas Accountants | Job-Costed Bookkeeping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -52,37 +50,75 @@
 
     svg { width: 100%; min-width: 900px; display: block; }
   </style>
-</head>
+<meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<link rel="canonical" href="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/example-radar-dark.html">
+<meta property="og:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta property="og:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlasaccountantsusa.com/data/skills/diagram-design/assets/example-radar-dark.html">
+<meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas Accountants | Job-Costed Bookkeeping">
+<meta name="twitter:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements.">
+<meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
+
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head>
 <body>
   <div class="frame">
     <p class="eyebrow">Radar · Diagram Design</p>
     <h1>Storage backends · Capability radar</h1>
 
     <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="radar-dark-title radar-dark-desc">
-      <title id="radar-dark-title">Storage backends · Capability radar</title>
+      <title id="radar-dark-title">Atlas Accountants | Job-Costed Bookkeeping</title>
       <desc id="radar-dark-desc">Radar chart comparing MinIO, Amazon S3, Ceph, and Google Cloud Storage across five storage capabilities.</desc>
         <defs>
           <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="0.9" fill="rgba(245,245,245,0.10)"/>
+            <circle cx="1" cy="1" r="0.9" fill="rgba(245,245,245,0.10)"></circle>
           </pattern>
         </defs>
 
-        <rect width="100%" height="100%" fill="#2d3142"/>
-        <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"/>
+        <rect width="100%" height="100%" fill="#2d3142"></rect>
+        <rect width="100%" height="100%" fill="url(#dots)" opacity="0.55"></rect>
 
         <!-- Concentric grid rings -->
-        <polygon points="500,208 530,230 519,266 481,266 470,230" fill="none" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"/>
-        <polygon points="500,176 561,220 538,292 462,292 439,220" fill="none" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"/>
-        <polygon points="500,144 591,211 556,317 444,317 409,211" fill="none" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"/>
-        <polygon points="500,112 622,201 575,343 425,343 378,201" fill="none" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"/>
-        <polygon points="500,80 652,191 594,369 406,369 348,191" fill="none" stroke="rgba(245,245,245,0.20)" stroke-width="1"/>
+        <polygon points="500,208 530,230 519,266 481,266 470,230" fill="none" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"></polygon>
+        <polygon points="500,176 561,220 538,292 462,292 439,220" fill="none" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"></polygon>
+        <polygon points="500,144 591,211 556,317 444,317 409,211" fill="none" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"></polygon>
+        <polygon points="500,112 622,201 575,343 425,343 378,201" fill="none" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"></polygon>
+        <polygon points="500,80 652,191 594,369 406,369 348,191" fill="none" stroke="rgba(245,245,245,0.20)" stroke-width="1"></polygon>
 
         <!-- Axis spokes -->
-        <line x1="500" y1="240" x2="500" y2="80" stroke="rgba(245,245,245,0.20)" stroke-width="1"/>
-        <line x1="500" y1="240" x2="652" y2="191" stroke="rgba(245,245,245,0.20)" stroke-width="1"/>
-        <line x1="500" y1="240" x2="594" y2="369" stroke="rgba(245,245,245,0.20)" stroke-width="1"/>
-        <line x1="500" y1="240" x2="406" y2="369" stroke="rgba(245,245,245,0.20)" stroke-width="1"/>
-        <line x1="500" y1="240" x2="348" y2="191" stroke="rgba(245,245,245,0.20)" stroke-width="1"/>
+        <line x1="500" y1="240" x2="500" y2="80" stroke="rgba(245,245,245,0.20)" stroke-width="1"></line>
+        <line x1="500" y1="240" x2="652" y2="191" stroke="rgba(245,245,245,0.20)" stroke-width="1"></line>
+        <line x1="500" y1="240" x2="594" y2="369" stroke="rgba(245,245,245,0.20)" stroke-width="1"></line>
+        <line x1="500" y1="240" x2="406" y2="369" stroke="rgba(245,245,245,0.20)" stroke-width="1"></line>
+        <line x1="500" y1="240" x2="348" y2="191" stroke="rgba(245,245,245,0.20)" stroke-width="1"></line>
 
         <!-- Axis labels -->
         <text x="500" y="62" fill="#f5f5f5" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Small-file handling</text>
@@ -100,40 +136,41 @@
 
         <!-- Non-focal series -->
         <!-- Ceph · series-2 dusty-blue dark -->
-        <polygon points="500,128 606,206 566,330 462,292 409,211" fill="rgba(130,160,192,0.22)" stroke="#82a0c0" stroke-width="1.5"/>
+        <polygon points="500,128 606,206 566,330 462,292 409,211" fill="rgba(130,160,192,0.22)" stroke="#82a0c0" stroke-width="1.5"></polygon>
         <!-- GCS · series-3 mustard dark -->
-        <polygon points="500,144 637,196 575,343 444,317 394,206" fill="rgba(211,173,122,0.22)" stroke="#d3ad7a" stroke-width="1.5"/>
+        <polygon points="500,144 637,196 575,343 444,317 394,206" fill="rgba(211,173,122,0.22)" stroke="#d3ad7a" stroke-width="1.5"></polygon>
         <!-- Amazon S3 · series-1 sage dark -->
-        <polygon points="500,144 652,191 585,356 453,305 378,201" fill="rgba(156,175,143,0.22)" stroke="#9caf8f" stroke-width="1.5"/>
+        <polygon points="500,144 652,191 585,356 453,305 378,201" fill="rgba(156,175,143,0.22)" stroke="#9caf8f" stroke-width="1.5"></polygon>
 
         <!-- Focal series · MinIO -->
-        <polygon points="500,96 622,201 585,356 415,356 363,196" fill="rgba(240,138,89,0.22)" stroke="#f08a59" stroke-width="1.8"/>
+        <polygon points="500,96 622,201 585,356 415,356 363,196" fill="rgba(240,138,89,0.22)" stroke="#f08a59" stroke-width="1.8"></polygon>
 
         <!-- Focal vertex dots -->
-        <circle cx="500" cy="96"  r="4" fill="#f08a59"/>
-        <circle cx="622" cy="201" r="4" fill="#f08a59"/>
-        <circle cx="585" cy="356" r="4" fill="#f08a59"/>
-        <circle cx="415" cy="356" r="4" fill="#f08a59"/>
-        <circle cx="363" cy="196" r="4" fill="#f08a59"/>
+        <circle cx="500" cy="96" r="4" fill="#f08a59"></circle>
+        <circle cx="622" cy="201" r="4" fill="#f08a59"></circle>
+        <circle cx="585" cy="356" r="4" fill="#f08a59"></circle>
+        <circle cx="415" cy="356" r="4" fill="#f08a59"></circle>
+        <circle cx="363" cy="196" r="4" fill="#f08a59"></circle>
 
         <!-- Legend -->
-        <line x1="40" y1="456" x2="960" y2="456" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"/>
+        <line x1="40" y1="456" x2="960" y2="456" stroke="rgba(245,245,245,0.10)" stroke-width="0.8"></line>
         <text x="40" y="472" fill="#bfc0c0" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em">LEGEND</text>
 
-        <rect x="40"  y="484" width="16" height="8" fill="rgba(240,138,89,0.22)" stroke="#f08a59" stroke-width="1.5"/>
-        <text x="64"  y="492" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif">MinIO · recommended</text>
+        <rect x="40" y="484" width="16" height="8" fill="rgba(240,138,89,0.22)" stroke="#f08a59" stroke-width="1.5"></rect>
+        <text x="64" y="492" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif">MinIO · recommended</text>
 
-        <rect x="220" y="484" width="16" height="8" fill="rgba(156,175,143,0.22)" stroke="#9caf8f" stroke-width="1.5"/>
+        <rect x="220" y="484" width="16" height="8" fill="rgba(156,175,143,0.22)" stroke="#9caf8f" stroke-width="1.5"></rect>
         <text x="244" y="492" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif">Amazon S3</text>
 
-        <rect x="344" y="484" width="16" height="8" fill="rgba(130,160,192,0.22)" stroke="#82a0c0" stroke-width="1.5"/>
+        <rect x="344" y="484" width="16" height="8" fill="rgba(130,160,192,0.22)" stroke="#82a0c0" stroke-width="1.5"></rect>
         <text x="368" y="492" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif">Ceph</text>
 
-        <rect x="424" y="484" width="16" height="8" fill="rgba(211,173,122,0.22)" stroke="#d3ad7a" stroke-width="1.5"/>
+        <rect x="424" y="484" width="16" height="8" fill="rgba(211,173,122,0.22)" stroke="#d3ad7a" stroke-width="1.5"></rect>
         <text x="448" y="492" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif">Google Cloud Storage</text>
 
         <text x="608" y="492" fill="#bfc0c0" font-size="8.5" font-family="'Geist', sans-serif" font-style="italic">One coral. Position is the signal — color reserved for the recommended option.</text>
       </svg>
   </div>
-</body>
-</html>
+
+
+</body></html>

@@ -1,36 +1,58 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
+    <!-- Google Analytics (GA4) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      
+      // Basic Event Tracking
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            let el = e.target.closest('a, button');
+            if(!el) return;
+            
+            if(el.href && el.href.startsWith('mailto:')) {
+                gtag('event', 'email_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.href && el.href.startsWith('tel:')) {
+                gtag('event', 'phone_click', { event_category: 'Contact', event_label: el.href });
+            }
+            if(el.classList.contains('btn-primary') || el.classList.contains('nav-cta')) {
+                gtag('event', 'booking_click', { event_category: 'Conversion', event_label: el.innerText });
+            }
+        });
+      });
+    </script>
+    </head><body>﻿
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atlas Accountants | Job-Costed Bookkeeping for Contractors</title>
-<meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors.">
+<meta name="description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors. Get your free review.">
 <meta property="og:title" content="Atlas Accountants | Job-Costed Bookkeeping for Contractors">
-<meta property="og:description" content="CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors.">
+<meta property="og:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors. Get your free review.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atlasaccountantsusa.com/">
 <meta property="og:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Atlas Accountants | Job-Costed Bookkeeping for Contractors">
-<meta name="twitter:description" content="CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors.">
+<meta name="twitter:description" content="Atlas Accountants delivers CPA-ready bookkeeping and job-costed financial statements for contractors, remodelers, and real estate investors. Get your free review.">
 <meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
 <link rel="canonical" href="https://atlasaccountantsusa.com/">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sen:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Sen:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <!-- Google Analytics (GA4) — Replace G-XXXXXXXXXX with your Measurement ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
-</script>
-</head>
-<body>
+
+
+
+
 
 <div class="wrap"><nav>
   <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Atlas Accountants" style="height: 32px;"></a>
@@ -70,10 +92,10 @@
         <div>
           <div class="sc-label">Sample Job Report</div>
           <div class="sc-title">Riverside Remodel</div>
-          <div class="sc-sub">Job #204 &middot; August 2026</div>
+          <div class="sc-sub">Job #204 · August 2026</div>
         </div>
         <div class="sc-badge">
-          <svg width="11" height="11" viewBox="0 0 24 24"><path d="M4 12 L10 18 L20 6" stroke="#E0680E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="11" height="11" viewBox="0 0 24 24"><path d="M4 12 L10 18 L20 6" stroke="#E0680E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           CPA-READY
         </div>
       </div>
@@ -86,8 +108,8 @@
       </div>
 
       <svg class="sc-spark" width="100%" height="46" viewBox="0 0 396 46" preserveAspectRatio="none">
-        <path d="M0 38 C 60 34, 90 28, 140 24 S 220 14, 280 10 S 350 4, 396 3" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <circle cx="396" cy="3" r="3.5" fill="#E0680E"/>
+        <path d="M0 38 C 60 34, 90 28, 140 24 S 220 14, 280 10 S 350 4, 396 3" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round"></path>
+        <circle cx="396" cy="3" r="3.5" fill="#E0680E"></circle>
       </svg>
 
       <div class="sc-footer">
@@ -137,21 +159,21 @@
     <div class="pillars-grid" id="pillars-grid">
       <div class="pillar" data-pillar="0">
         <div class="pillar-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M12 3 L20 6 V11 C20 16 16.5 20 12 21 C7.5 20 4 16 4 11 V6 Z" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M12 3 L20 6 V11 C20 16 16.5 20 12 21 C7.5 20 4 16 4 11 V6 Z" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"></path></svg>
         </div>
         <h3>Trust</h3>
         <p>Direct access to the person doing the work. No rotating junior staff, no call center. You talk to the same accountant every month.</p>
       </div>
       <div class="pillar" data-pillar="1">
         <div class="pillar-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M6 3 H15 L19 7 V21 H6 Z" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"/><path class="icon-draw" d="M9 12 H15 M9 16 H15" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M6 3 H15 L19 7 V21 H6 Z" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"></path><path class="icon-draw" d="M9 12 H15 M9 16 H15" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </div>
         <h3>Compliance</h3>
         <p>Clean, reconciled financials that hold up if a bank, surety, or auditor asks for them. Not scrambled together once a year.</p>
       </div>
       <div class="pillar" data-pillar="2">
         <div class="pillar-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M3 18 L9 11 L13 15 L21 5" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path class="icon-draw" d="M15 5 H21 V11" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M3 18 L9 11 L13 15 L21 5" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><path class="icon-draw" d="M15 5 H21 V11" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </div>
         <h3>Growth</h3>
         <p>Job-costed reporting that shows you where the real margin is, so your next bid is based on numbers, not a gut feeling.</p>
@@ -170,42 +192,42 @@
     <div class="service-grid" id="services-track">
       <div class="service-card">
         <div class="service-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M3 21 H21 M5 21 V10 L12 4 L19 10 V21 M10 21 V15 H14 V21" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M3 21 H21 M5 21 V10 L12 4 L19 10 V21 M10 21 V15 H14 V21" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"></path></svg>
         </div>
         <h3>Residential GCs &amp; Remodelers</h3>
         <p>Draw schedules, retainage, and job costing that finally add up across every active project.</p>
         <a class="service-link" href="/services-construction">Construction Accounting
-          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </a>
       </div>
       <div class="service-card">
         <div class="service-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M4 21 H20 M6 21 V8 L12 3 L18 8 V21 M9 21 V12 H15 V21" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M4 21 H20 M6 21 V8 L12 3 L18 8 V21 M9 21 V12 H15 V21" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round"></path></svg>
         </div>
         <h3>Real Estate Investors &amp; Landlords</h3>
         <p>Property-level P&amp;Ls so you know which units are actually paying off, not just your total revenue.</p>
         <a class="service-link" href="/services-real-estate">Real Estate Accounting
-          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </a>
       </div>
       <div class="service-card">
         <div class="service-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M7 17 L3 21 M17 7 L21 3 M8.5 15.5 L3.5 20.5 M15.5 8.5 L20.5 3.5 M6 14 L10 18 L18 10 L14 6 Z" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M7 17 L3 21 M17 7 L21 3 M8.5 15.5 L3.5 20.5 M15.5 8.5 L20.5 3.5 M6 14 L10 18 L18 10 L14 6 Z" stroke="#E0680E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"></path></svg>
         </div>
         <h3>Specialty Trade Subcontractors</h3>
         <p>Certified payroll and per-job margins, tracked without the spreadsheet chaos at month-end.</p>
         <a class="service-link" href="/services">See All Services
-          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </a>
       </div>
       <div class="service-card">
         <div class="service-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M20 7H4C2.9 7 2 7.9 2 9V19C2 20.1 2.9 21 4 21H20C21.1 21 22 20.1 22 19V9C22 7.9 21.1 7 20 7ZM16 7V5C16 3.9 15.1 3 14 3H10C8.9 3 8 3.9 8 5V7" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path class="icon-draw" d="M20 7H4C2.9 7 2 7.9 2 9V19C2 20.1 2.9 21 4 21H20C21.1 21 22 20.1 22 19V9C22 7.9 21.1 7 20 7ZM16 7V5C16 3.9 15.1 3 14 3H10C8.9 3 8 3.9 8 5V7" stroke="#E0680E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </div>
         <h3>Small Businesses, All Industries</h3>
         <p>Margin by client or product, cash runway, and lender-ready books, wherever your business operates.</p>
         <a class="service-link" href="/services-small-business">Small Business Accounting
-          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="#E0680E" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </a>
       </div>
     </div>
@@ -279,8 +301,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Atlas Accountants. All rights reserved.</span>
-      <span><a href="/privacy-policy" style="color: inherit; text-decoration: none; opacity: 0.8;">Privacy Policy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: none; opacity: 0.8;">Terms</a> &middot; Wake Forest, North Carolina</span>
+      <span>© 2026 Atlas Accountants. All rights reserved.</span>
+      <span><a href="/privacy-policy" style="color: inherit; text-decoration: none; opacity: 0.8;">Privacy Policy</a> · <a href="/terms" style="color: inherit; text-decoration: none; opacity: 0.8;">Terms</a> · Wake Forest, North Carolina</span>
     </div>
   </div>
 </footer>
@@ -289,9 +311,9 @@
 <!-- ============ THE MARGIN LINE (scroll-drawn winding path) ============ -->
 <div id="margin-line-wrap">
   <svg id="margin-line-svg">
-    <path id="margin-line-path" stroke="#F4EFE6" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.9"/>
-    <path id="margin-line-path-fg" stroke="#E0680E" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <circle id="margin-line-dot" r="6" fill="#E0680E"/>
+    <path id="margin-line-path" stroke="#F4EFE6" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.9"></path>
+    <path id="margin-line-path-fg" stroke="#E0680E" stroke-width="3" fill="none" stroke-linecap="round"></path>
+    <circle id="margin-line-dot" r="6" fill="#E0680E"></circle>
   </svg>
 </div>
 
@@ -573,5 +595,6 @@ function declineCookies() {
   window['ga-disable-G-XXXXXXXXXX'] = true;
 }
 </script>
-</body>
-</html>
+
+
+</body></html>

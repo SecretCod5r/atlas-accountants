@@ -1,14 +1,18 @@
-# Atlas Accountants — robots.txt
-# https://atlasaccountantsusa.com
-
 User-agent: *
 Allow: /
 
-# Disallow config/agent directories
-Disallow: /.agents/
-Disallow: /.git/
-Disallow: /data/
-Disallow: /scratch/
+# Allow AI retrieval crawlers
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
 
-# Sitemap location
 Sitemap: https://atlasaccountantsusa.com/sitemap.xml
