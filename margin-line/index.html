@@ -265,7 +265,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>The Margin Line</h1>
     <p>A free 90-second scorecard. Answer 9 quick questions and get an instant score for your job numbers.</p>
   </div>
-  <div class="ml-card">
+  <div class="ml-card" data-clarity-mask="True">
     <!-- Winding progress path -->
     <div class="ml-progress-wrap" id="ml-progress-bar">
       <svg class="ml-progress-svg" viewBox="0 0 600 36" preserveAspectRatio="none">
@@ -491,7 +491,7 @@ function renderStep(idx, direction) {
       '<div class="score-circle-wrapper"><svg class="score-circle-svg" viewBox="0 0 140 140"><circle class="score-circle-bg" cx="70" cy="70" r="60"></circle><circle class="score-circle-progress" cx="70" cy="70" r="60" id="anim-ring"></circle></svg>' +
       '<div class="score-value" id="score-number">0</div></div>' +
       '<div class="score-headline" id="score-headline">"' + headline + '"</div></div>' +
-      '<div class="gate-form"><p>Enter your details to see your full breakdown, category by category.</p>' +
+      '<div class="gate-form" data-clarity-mask="True"><p>Enter your details to see your full breakdown, category by category.</p>' +
       '<div class="floating-label-group"><input type="text" id="gf-name" placeholder=" " required><label>First Name</label></div>' +
       '<div class="floating-label-group"><input type="email" id="gf-email" placeholder=" " required><label>Email</label></div>' +
       '<div class="floating-label-group"><select id="gf-type" required><option value="" disabled hidden '+(mappedBizType===''?'selected':'')+'></option><option value="Residential GC/remodeler" '+s1+'>Residential GC/remodeler</option><option value="Specialty trade subcontractor" '+s2+'>Specialty trade subcontractor</option><option value="Real estate investor or developer" '+s3+'>Real estate investor or developer</option><option value="Other" '+s4+'>Other</option></select><label>Business Type</label></div>' +
