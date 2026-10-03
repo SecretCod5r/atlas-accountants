@@ -456,6 +456,10 @@ function renderStep(idx, direction) {
     stepDiv.innerHTML = html;
 
   } else if (idx >= 0 && idx < questions.length) {
+    if (idx === 0) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'quiz_start' });
+    }
     var q = questions[idx];
     var html = '<div class="step-label">Question ' + (idx+1) + ' of ' + questions.length + ' &middot; ' + q.cat + '</div>';
     html += '<div class="question-text">' + q.q + '</div><div class="options-grid">';
@@ -475,6 +479,12 @@ function renderStep(idx, direction) {
     var score100 = Math.round((totalPts/27)*100);
     var headline = logic.getHeadline(score100);
     document.getElementById('ml-main-header').style.display = 'none';
+    var scoreBand = '0_39';
+    if (score100 >= 80) scoreBand = '80_100';
+    else if (score100 >= 60) scoreBand = '60_79';
+    else if (score100 >= 40) scoreBand = '40_59';
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'quiz_complete', score_band: scoreBand });
 
     var mappedBizType = "";
     if (branchChoice && branchChoice.text === "Residential GC or remodeler") mappedBizType = "Residential GC/remodeler";
@@ -496,7 +506,8 @@ function renderStep(idx, direction) {
       '<div class="floating-label-group"><input type="email" id="gf-email" placeholder=" " required><label>Email</label></div>' +
       '<div class="floating-label-group"><select id="gf-type" required><option value="" disabled hidden '+(mappedBizType===''?'selected':'')+'></option><option value="Residential GC/remodeler" '+s1+'>Residential GC/remodeler</option><option value="Specialty trade subcontractor" '+s2+'>Specialty trade subcontractor</option><option value="Real estate investor or developer" '+s3+'>Real estate investor or developer</option><option value="Other" '+s4+'>Other</option></select><label>Business Type</label></div>' +
       '<div class="floating-label-group"><select id="gf-rev" required><option value="" disabled selected hidden></option><option value="Under $500K">Under $500K</option><option value="$500K to $1M">$500K to $1M</option><option value="$1M+">$1M+</option></select><label>Annual Revenue</label></div>' +
-      '<button class="btn-primary btn-submit" onclick="showReport()">Show My Full Breakdown</button></div>';
+      '<button class="btn-primary btn-submit" onclick="showReport()">Show My Full Breakdown</button>' +
+      '<div class="form-error" id="ml-submit-error" style="display:none; margin-top:10px; text-align:center; color: var(--error);">There was an error submitting your form. Please try again.</div></div>';
 
   } else {
     document.getElementById('ml-progress-bar').style.display = 'none';
@@ -669,30 +680,38 @@ window.showReport = function() {
     margin_line_score: score,
     _subject: 'New Margin Line Score: ' + score + '/100 from ' + name,
     _cc: '',
-    _replyto: email
+    _replyto: email,
+    utm_source: sessionStorage.getItem('utm_source') || '',
+    utm_medium: sessionStorage.getItem('utm_medium') || '',
+    utm_campaign: sessionStorage.getItem('utm_campaign') || '',
+    utm_content: sessionStorage.getItem('utm_content') || '',
+    utm_term: sessionStorage.getItem('utm_term') || '',
+    landing_page: sessionStorage.getItem('landing_page') || '',
+    referrer: sessionStorage.getItem('referrer') || '',
+    fbclid: sessionStorage.getItem('fbclid') || '',
+    gclid: sessionStorage.getItem('gclid') || ''
   };
 
   fetch('https://formspree.io/f/mbglpwan', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify(formData)
+  }).then(function(res) {
+    if (res.ok) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'generate_lead',
+        lead_type: 'margin_line',
+        event_id: crypto.randomUUID()
+      });
+      currentStep++;
+      renderStep(currentStep, 'next');
+    } else {
+      document.getElementById('ml-submit-error').style.display = 'block';
+    }
   }).catch(function() {
-    // Fallback: mailto
-    var subject = encodeURIComponent('New Margin Line Score: ' + score + '/100 from ' + name);
-    var body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      'Business Type: ' + bizType + '\n' +
-      'Annual Revenue: ' + rev + '\n' +
-      'Margin Line Score: ' + score + '/100'
-    );
-    var mailLink = document.createElement('a');
-    mailLink.href = 'mailto:info@atlasaccountantsusa.com?subject=' + subject + '&body=' + body;
-    mailLink.click();
+    document.getElementById('ml-submit-error').style.display = 'block';
   });
-
-  currentStep++;
-  renderStep(currentStep, 'next');
 };
 
 currentStep = -1;

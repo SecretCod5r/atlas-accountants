@@ -324,6 +324,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
     </div>
     <button type="button" class="btn-primary" style="width:100%; margin-top:10px;" onclick="submitContact()">Send Message</button>
+    <div class="form-error" id="submit-error" style="display:none; margin-top:10px; text-align:center; color: var(--error);">There was an error submitting your message. Please try again.</div>
   </div>
 
   <div class="contact-form-card" id="contact-ty">
@@ -408,7 +409,16 @@ function submitContact() {
     message: message,
     _subject: 'New Contact Form Message from ' + name,
     _cc: '',
-    _replyto: email
+    _replyto: email,
+    utm_source: sessionStorage.getItem('utm_source') || '',
+    utm_medium: sessionStorage.getItem('utm_medium') || '',
+    utm_campaign: sessionStorage.getItem('utm_campaign') || '',
+    utm_content: sessionStorage.getItem('utm_content') || '',
+    utm_term: sessionStorage.getItem('utm_term') || '',
+    landing_page: sessionStorage.getItem('landing_page') || '',
+    referrer: sessionStorage.getItem('referrer') || '',
+    fbclid: sessionStorage.getItem('fbclid') || '',
+    gclid: sessionStorage.getItem('gclid') || ''
   };
 
   fetch('https://formspree.io/f/mbglpwan', {
@@ -417,31 +427,19 @@ function submitContact() {
     body: JSON.stringify(formData)
   }).then(function(res) {
     if (res.ok) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'generate_lead',
+        lead_type: 'contact',
+        event_id: crypto.randomUUID()
+      });
       document.getElementById('contact-form-wrap').style.display = 'none';
       document.getElementById('contact-ty').style.display = 'block';
     } else {
-      var subject = encodeURIComponent('New Contact Form Message from ' + name);
-      var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Company: ' + company + '\n' +
-        'Message: ' + message
-      );
-      window.location.href = 'mailto:info@atlasaccountantsusa.com?subject=' + subject + '&body=' + body;
-      document.getElementById('contact-form-wrap').style.display = 'none';
-      document.getElementById('contact-ty').style.display = 'block';
+      document.getElementById('submit-error').style.display = 'block';
     }
   }).catch(function() {
-    var subject = encodeURIComponent('New Contact Form Message from ' + name);
-    var body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      'Company: ' + company + '\n' +
-      'Message: ' + message
-    );
-    window.location.href = 'mailto:info@atlasaccountantsusa.com?subject=' + subject + '&body=' + body;
-    document.getElementById('contact-form-wrap').style.display = 'none';
-    document.getElementById('contact-ty').style.display = 'block';
+    document.getElementById('submit-error').style.display = 'block';
   });
 }
 </script>

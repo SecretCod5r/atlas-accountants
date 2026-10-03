@@ -561,8 +561,48 @@
     }
   }
 
+  // ── UTM Tracking ─────────────────────────────────────────
+  function initUTMs() {
+    var params = new URLSearchParams(window.location.search);
+    var trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+    
+    trackingParams.forEach(function(param) {
+      if (params.has(param)) {
+        sessionStorage.setItem(param, params.get(param));
+      }
+    });
+
+    if (!sessionStorage.getItem('landing_page')) {
+      sessionStorage.setItem('landing_page', window.location.href.split('?')[0]);
+    }
+    if (!sessionStorage.getItem('referrer') && document.referrer) {
+      sessionStorage.setItem('referrer', document.referrer);
+    }
+  }
+
+  // ── Global Event Tracking ────────────────────────────────
+  function initEventTracking() {
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      
+      window.dataLayer = window.dataLayer || [];
+      
+      if (href.indexOf('tel:') === 0) {
+        window.dataLayer.push({ event: 'phone_click' });
+      } else if (href.indexOf('mailto:') === 0) {
+        window.dataLayer.push({ event: 'email_click' });
+      } else if (href.indexOf('/financial-health-review') !== -1 || href.indexOf('calendly.com') !== -1) {
+        window.dataLayer.push({ event: 'booking_click' });
+      }
+    });
+  }
+
   // ── Init everything on DOM ready ─────────────────────────
   function init() {
+    initUTMs();
+    initEventTracking();
     initBrandOverlay();
     initScrollProgress();
     // initCursor(); // Disabled — using normal browser cursor
