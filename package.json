@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "node seo-build.js",
+    "test": "playwright test"
+  },
   "dependencies": {
     "cheerio": "^1.2.0"
   },
