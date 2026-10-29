@@ -354,7 +354,7 @@ function processHtmlFile(filePath, relPath) {
 function walkDir(dir, callback) {
     fs.readdirSync(dir).forEach(f => {
         let dirPath = path.join(dir, f);
-        if (f === 'node_modules' || f === '.git' || f.startsWith('.')) return;
+        if (f === 'node_modules' || f === '.git' || f === 'data' || f === 'scratch' || f.startsWith('.')) return;
         let isDirectory = fs.statSync(dirPath).isDirectory();
         isDirectory ? walkDir(dirPath, callback) : callback(path.join(dir, f));
     });
