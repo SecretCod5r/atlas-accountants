@@ -202,4 +202,21 @@ test.describe('Header and Navigation Updates', () => {
     });
   });
 
+  test('Homepage "See The Margin Line" button redirects to /margin-line, not .html', async ({ page }) => {
+    await page.goto('/index.html');
+    const mlBtn = page.locator('#ml-start');
+    await expect(mlBtn).toBeVisible();
+    await mlBtn.click();
+    await page.waitForURL(url => url.pathname.includes('/margin-line') && !url.pathname.includes('.html'), { timeout: 5000 });
+    expect(page.url()).toContain('/margin-line');
+    expect(page.url()).not.toContain('margin-line.html');
+  });
+
+  test('Homepage quiz card click redirects to /margin-line, not .html', async ({ page }) => {
+    await page.goto('/index.html');
+    const quizLink = page.locator('a[href="/margin-line"]:has(#ml-end)');
+    await expect(quizLink).toBeVisible();
+    await expect(quizLink).toHaveAttribute('href', '/margin-line');
+  });
+
 });

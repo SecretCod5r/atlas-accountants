@@ -348,16 +348,16 @@
         if (typeof lenis !== "undefined" && lenis) {
           lenis.scrollTo("#ml-end", { duration: 1.5 });
           setTimeout(function() {
-            window.location.href = "margin-line.html";
+            window.location.href = "/margin-line";
           }, 1500);
         } else if (typeof gsap !== "undefined" && typeof ScrollToPlugin !== "undefined") {
           gsap.to(window, { duration: 1.5, scrollTo: "#ml-end", onComplete: function() {
-            window.location.href = "margin-line.html";
+            window.location.href = "/margin-line";
           }});
         } else {
           document.querySelector("#ml-end").scrollIntoView({ behavior: "smooth" });
           setTimeout(function() {
-            window.location.href = "margin-line.html";
+            window.location.href = "/margin-line";
           }, 1000);
         }
       });

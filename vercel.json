@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/margin-line.html", "destination": "/margin-line", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/pricing.html", "destination": "/pricing", "permanent": true },
+    { "source": "/financial-health-review.html", "destination": "/financial-health-review", "permanent": true },
+    { "source": "/privacy-policy.html", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/terms.html", "destination": "/terms", "permanent": true },
+    { "source": "/services.html", "destination": "/services", "permanent": true },
+    { "source": "/resources.html", "destination": "/resources", "permanent": true }
+  ]
+}
