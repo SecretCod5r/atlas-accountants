@@ -48,6 +48,10 @@
     }
   }
 
+  // Expose AtlasInteractions globally for integrations
+  window.AtlasInteractions = window.AtlasInteractions || {};
+  window.AtlasInteractions.lenis = lenis;
+
   // ── Branded load-in overlay ──────────────────────────────
   function initBrandOverlay() {
     if (prefersReduced) return;
@@ -595,6 +599,23 @@
         window.dataLayer.push({ event: 'email_click' });
       } else if (href.indexOf('/financial-health-review') !== -1 || href.indexOf('calendly.com') !== -1) {
         window.dataLayer.push({ event: 'booking_click' });
+      }
+    });
+
+    // Listen for Calendly event_scheduled message and push booking_complete with no PII
+    window.addEventListener('message', function(e) {
+      var data = e.data;
+      if (!data) return;
+      if (typeof data === 'string') {
+        try {
+          data = JSON.parse(data);
+        } catch (err) {
+          return;
+        }
+      }
+      if (data && data.event === 'calendly.event_scheduled') {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'booking_complete' });
       }
     });
   }

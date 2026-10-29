@@ -10,31 +10,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:description" content="Get in touch with Atlas Accountants to streamline your contractor bookkeeping. Serving all 50 states with job-costed financial reporting.">
 <meta name="twitter:image" content="https://atlasaccountantsusa.com/assets/og-image.png">
 
-    <!-- Google Analytics (GA4) -->
-    
-    
-    
-    <!-- Google Analytics (GA4) -->
-    
-    
-    
-    <!-- Google Analytics (GA4) -->
-    
-    
-    
-    <!-- Google Analytics (GA4) -->
-    
-    
-    
-
-    <!-- Google Analytics (GA4) -->
-    
-    
-    
-
-    <!-- Google Analytics (GA4) -->
-    
-    
     <script type="application/ld+json">
 [
   {
@@ -100,7 +75,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         });
       });
     </script>
-    
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -151,6 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Sen:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   .contact-hero { padding: 80px 0 60px; text-align: center; }
   .contact-hero h1 { font-size: 48px; margin-bottom: 20px; }
@@ -183,22 +158,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     font-size: 15px; color: var(--charcoal); opacity: 0.8; margin-bottom: 6px;
   }
 
-  /* Prefer a Call */
-  .call-block { text-align: center; margin-bottom: 40px; }
+  /* Prefer a Call & Booking */
+  .call-block {
+    text-align: center; margin-bottom: 50px;
+    background: #fff; border: 1px solid rgba(22,35,59,0.1);
+    border-radius: 12px; padding: 36px 24px;
+    box-shadow: 0 10px 30px -10px rgba(22,35,59,0.1);
+  }
   .call-block h2 {
     font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px;
     color: var(--navy); margin-bottom: 10px;
   }
   .call-block p {
-    font-size: 15px; color: var(--charcoal); opacity: 0.8; margin-bottom: 30px;
+    font-size: 15px; color: var(--charcoal); opacity: 0.8; margin-bottom: 24px;
   }
-
-  /* Calendly embed */
-  .calendly-embed-wrapper {
-    max-width: 800px; margin: 0 auto 80px;
-    border: 1px solid rgba(22,35,59,0.1);
-    border-radius: 12px; overflow: hidden;
-    box-shadow: 0 20px 40px -14px rgba(22,35,59,0.18);
+  .booking-action-wrap {
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+  }
+  .booking-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    background: var(--navy);
+    color: var(--offwhite) !important;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+  .booking-btn:hover {
+    background: #1e3357;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(22,35,59,0.2);
+  }
+  .booking-fallback {
+    font-size: 14px;
+    color: var(--charcoal);
+  }
+  .booking-fallback a {
+    color: #3370c4;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .booking-fallback a:hover {
+    color: var(--navy);
   }
 
   /* Contact form below */
@@ -286,15 +290,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- Prefer a Call -->
-  <div class="call-block reveal">
+  <div class="call-block" id="booking-section">
     <h2>Prefer a Call?</h2>
-    <p>Not sure where to start? Book a quick discovery call.</p>
+    <p>Not sure where to start? Book a quick 30-minute discovery call.</p>
+    <div class="booking-action-wrap">
+      <a href="https://calendly.com/anoop-atlasaccountantsusa/30min" onclick="return openCalendlyPopup(event);" class="btn-primary booking-btn" id="book-call-btn">Book a call</a>
+      <div class="booking-fallback">
+        <a href="https://calendly.com/anoop-atlasaccountantsusa/30min" target="_blank" rel="noopener">Can't open the popup? Open directly on Calendly →</a>
+      </div>
+    </div>
   </div>
-</div>
-
-<!-- Calendly Inline Embed -->
-<div class="calendly-embed-wrapper reveal">
-  <iframe src="https://calendly.com/anoop-atlasaccountantsusa/30min?embed_domain=atlasaccountantsusa.com&amp;embed_type=Inline" width="100%" height="700" frameborder="0" scrolling="no" style="min-width: 320px; border: none;" title="Book a Discovery Call with Atlas Accountants"></iframe>
 </div>
 
 <!-- Send a Message form -->
@@ -357,8 +362,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="/atlas-interactions.js"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async=""></script>
 
 <script>
+function openCalendlyPopup(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'booking_click' });
+
+  if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+    if (window.AtlasInteractions && window.AtlasInteractions.lenis) {
+      window.AtlasInteractions.lenis.stop();
+    }
+    Calendly.initPopupWidget({ url: 'https://calendly.com/anoop-atlasaccountantsusa/30min' });
+
+    var checkOverlay = setInterval(function() {
+      if (!document.querySelector('.calendly-overlay')) {
+        clearInterval(checkOverlay);
+        if (window.AtlasInteractions && window.AtlasInteractions.lenis) {
+          window.AtlasInteractions.lenis.start();
+        }
+      }
+    }, 400);
+  } else {
+    window.open('https://calendly.com/anoop-atlasaccountantsusa/30min', '_blank');
+  }
+  return false;
+}
+
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }

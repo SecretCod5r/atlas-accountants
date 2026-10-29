@@ -18,5 +18,10 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     }
   ],
-  
+  webServer: {
+    command: 'npx serve -l 3000 .',
+    port: 3000,
+    reuseExistingServer: !process.env.CI,
+  },
 });
+

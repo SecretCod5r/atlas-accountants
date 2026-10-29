@@ -134,4 +134,47 @@ test.describe('Tracking and form submissions', () => {
     // The thank you message should be visible
     await expect(page.locator('#contact-ty')).toBeVisible();
   });
+
+  test('Calendly popup button, fallback link, and event tracking', async ({ page }) => {
+    await page.goto('/contact/index.html');
+
+    // 1. Verify no stuck inline iframe exists
+    const inlineIframe = page.locator('.calendly-embed-wrapper iframe');
+    await expect(inlineIframe).toHaveCount(0);
+
+    // 2. Verify primary Book a call button exists
+    const bookBtn = page.locator('#book-call-btn');
+    await expect(bookBtn).toBeVisible();
+    await expect(bookBtn).toHaveText('Book a call');
+
+    // 3. Verify plain text fallback link exists
+    const fallbackLink = page.locator('.booking-fallback a');
+    await expect(fallbackLink).toBeVisible();
+    await expect(fallbackLink).toHaveAttribute('href', 'https://calendly.com/anoop-atlasaccountantsusa/30min');
+
+    // 4. Click Book a call button and verify booking_click event in dataLayer
+    await bookBtn.click();
+    await page.waitForFunction(() => {
+      const dl = window.dataLayer || [];
+      return dl.some(e => e.event === 'booking_click');
+    });
+
+    // 5. Simulate calendly.event_scheduled window message and verify booking_complete (with NO PII)
+    await page.evaluate(() => {
+      window.postMessage({ event: 'calendly.event_scheduled', payload: { invitee: { email: 'secret@example.com', name: 'Secret User' } } }, '*');
+    });
+
+    await page.waitForFunction(() => {
+      const dl = window.dataLayer || [];
+      return dl.some(e => e.event === 'booking_complete');
+    });
+
+    const dataLayer = await page.evaluate(() => window.dataLayer);
+    const bookingCompleteEvent = dataLayer.find(e => e.event === 'booking_complete');
+    expect(bookingCompleteEvent).toBeDefined();
+    expect(bookingCompleteEvent.name).toBeUndefined();
+    expect(bookingCompleteEvent.email).toBeUndefined();
+    expect(bookingCompleteEvent.payload).toBeUndefined();
+  });
 });
+
